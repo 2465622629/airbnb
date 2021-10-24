@@ -39,13 +39,13 @@
 .wrapper_content {
     width: 70%;
     height: auto;
-    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 150px repeat(6, 3fr);
     grid-gap: 20px;
     position: absolute;
     top: 8.2%;
+    left: 14%;
 }
 
 /*搜索框*/
@@ -162,12 +162,14 @@
 /*选项卡*/
 .content_tab {
     overflow: hidden;
-    width: 100%;
+    max-width: 1700px;
     margin: 30px 0;
 }
 
 .content_tab ul {
     padding: 0;
+    overflow: hidden;
+    max-width: 1700px;
 }
 
 .content_tab ul li {
