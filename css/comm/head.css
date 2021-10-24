@@ -1,0 +1,73 @@
+/*
+10.13
+1.用户头像添加白色圆角边框
+2.搜索框添加小图标
+3.搜索框添加动效
+
+*/
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+/*划分网格 公共*/
+.wrapper_nav {
+    width: 100%;
+    display: inline-grid;
+    grid-template-columns: 1fr 3fr repeat(5, 0.5fr);
+    grid-template-rows: 1fr;
+    justify-self: center;
+    align-items: center;
+    height: 80px;
+}
+
+.wrapper_nav div{
+   text-align: center;
+    color: #000000;
+    font-weight: bold;
+}
+
+.wrapper_nav_item {
+    grid-template-columns: repeat(3,1fr);
+}
+.wrapper_nav_item div{
+    width: 33.33%;
+    display: inline-block;
+}
+input{
+    outline: none;
+}
+
+/*设置详细样式*/
+.wrapper_nav_item_logo img{
+    width: 70%;
+}
+
+/*搜索框*/
+.wrapper_nav_item_search{
+    position: relative;
+}
+
+.wrapper_nav_item_search input{
+    width: 60%;
+    height: 46px;
+    font-size: 1.3em;
+    border-radius: 5px;
+    border: none;
+}
+
+
+/*用户头像*/
+.wrapper_nav_item_user_logo{
+}
+
+.wrapper_nav_item_user_logo div {
+    box-shadow: rgb(235 235 235) 0px 0px 0px;
+    background: rgb(242,242,242);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    overflow: hidden;
+}

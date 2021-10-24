@@ -1,0 +1,110 @@
+.content_top_img {
+    width: 100%;
+    height: 500px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 3fr 1fr 1fr;
+    grid-template-columns: 3fr 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.content_box_wrapper {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 0.8fr;
+    grid-template-columns: 1fr 0.8fr;
+    -ms-grid-rows: auto;
+    grid-template-rows: auto;
+    grid-gap: 50px;
+    margin: 0 auto;
+    width: 70%;
+}
+
+.content_box_wrapper .top_tag span {
+    display: inline-block;
+    color: #008489;
+    font-weight: bold;
+    font-size: 0.6em;
+}
+
+.house_info_box .house_info {
+    font-size: 0.3em;
+    font-weight: bold;
+    color: #14275e;
+}
+
+.house_info_box .house_info_title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.house_info_box .house_mark_box span {
+    display: inline-block;
+    border-radius: 5px;
+    font-size: 0.5em;
+    font-weight: bold;
+    color: #484848;
+}
+
+.house_info_box .house_mark_box .house_mark_score {
+    color: #2a6e00;
+}
+
+.house_info_box .house_mark_box .house_mark_invoice {
+    color: #6e4800;
+}
+
+.host_info_box .host_head_box {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 0.3fr auto;
+    grid-template-columns: 0.3fr auto;
+    -ms-grid-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.host_info_box .host_head_box .host_head_img {
+    width: 64px;
+    height: 64px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.host_evaluate_box {
+    background-color: #f8f8f8;
+    width: 100%;
+    height: 180px;
+    border-radius: 5px;
+}
+
+.host_evaluate_box .host_evaluate_content {
+    overflow: hidden;
+    padding: 12px;
+    color: #484848;
+}
+
+.host_evaluate_box .host_evaluate_content p {
+    line-height: 1.5em;
+}
+
+.host_evaluate_box .host_evaluate_content .host_evaluate_more {
+    color: #008489;
+    font-weight: bold;
+}
+
+.house_bad_box .house_bad_card_box {
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+}
+
+.house_bad_box .house_bad_card_box .house_bad_card {
+    padding: 10px;
+}
+
+.airbnb_guarantee_box .airbnb_guarantee {
+    font-weight: bold;
+}
+
+/*# sourceMappingURL=main.css.map */

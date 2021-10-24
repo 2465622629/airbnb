@@ -1,0 +1,294 @@
+@import url("//unpkg.com/element-ui@2.15.6/lib/theme-chalk/index.css");
+/*图标样式*/
+.el-icon-star-on{
+    color: rgb(0,132,127);
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+/*首页画网格*/
+.application{
+    width: 100%;
+    height: 6000px;
+    position: relative;
+}
+.wrapper_img {
+    width: 100%;
+    height: 528px;
+    display: inline-grid;
+    grid-template-columns:1fr;
+    grid-template-rows: 1fr;
+}
+
+.wrapper_img_item {
+    width: 100%;
+    height: 528px;
+}
+
+.wrapper_img_item_img {
+    width: 100%;
+    height: 100%;
+    background: url("../../img/head.jpg") no-repeat;
+    background-size: 100%;
+}
+
+/*内容划分*/
+.wrapper_content {
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 150px repeat(6, 3fr);
+    grid-gap: 20px;
+    position: absolute;
+    top: 8.2%;
+}
+
+/*搜索框*/
+/*增加有边框*/
+.search_select {
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    border-right: 1px solid rgb(228, 228, 228);
+}
+
+.search_select div {
+    text-align: center;
+    font-weight: 600;
+    color: #484848;
+    cursor: pointer;
+}
+
+.content_search_input_box {
+    height: 70px;
+    line-height: 70px;
+    border-right: 1px solid rgb(228, 228, 228);
+
+}
+
+.content_search {
+    justify-self: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1.3fr  8fr 6fr 1.3fr;
+    grid-template-rows: 1fr;
+    grid-gap: 10px;
+    height: 70px;
+    border-radius: 10px;
+    background: white;
+    border: 1px solid #EBEBEB;
+    width: 100%
+}
+
+.content_search_input {
+    text-align: center;
+}
+
+/*搜索框定位图标*/
+.el-icon-location {
+    font-size: 1.5em;
+}
+
+.content_search_input input::placeholder {
+    font-size: 0.9em;
+    font-weight: 800;
+    color: black;
+}
+
+.content_search_input input {
+    width: 80%;
+    border: none;
+    height: 30px;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1.3em;
+    font-weight: bold;
+
+}
+
+.content_btn div {
+    text-align: center;
+    justify-self: center;
+    line-height: 50px;
+    color: white;
+    min-width: 50px;
+    width: 90%;
+    padding: 0 5px;
+    height: 50px;
+    border-radius: 6px;
+    background: #FF5A5F;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+/*卡片*/
+.content_house_card_box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 18px;
+    height: 773px;
+    overflow: hidden;
+}
+
+/*卡片样式设置*/
+/*大卡片*/
+.content_preferential {
+
+}
+.content_preferential_end_text{
+    color: #008489;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.content_preferential_title {
+    font-size: 1.5em;
+    font-weight: bold;
+    height: 45px;
+    line-height: 45px;
+}
+
+.content_preferential_msg {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+/*选项卡*/
+.content_tab {
+    overflow: hidden;
+    width: 100%;
+    margin: 30px 0;
+}
+
+.content_tab ul {
+    padding: 0;
+}
+
+.content_tab ul li {
+    display: inline-block;
+}
+
+.content_tab ul li span {
+    display: inline-block;
+    cursor: pointer;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-right: 8px;
+    text-align: center;
+    width: 124px;
+    padding: 14px 0;
+    background: #00848A;
+    border-radius: 3px;
+}
+
+/*简介*/
+.house_card {
+    overflow: hidden;
+    border-radius: 3px;
+}
+.house_card *{
+    cursor: pointer;
+}
+
+.house_card_img {
+    /*border-radius: 10px;*/
+}
+
+.house_card .house_card_brief {
+    color: rgb(57, 87, 106);
+    font-size: 0.3em;
+    font-weight: bold;
+}
+
+/*标题*/
+.house_card_title span {
+    color: rgb(72, 72, 72);
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+/*价格*/
+.house_card_price span {
+
+    color: rgb(72, 72, 72);
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.house_card_price span:nth-child(2) {
+    text-decoration: line-through;
+}
+
+
+/*小卡片列表*/
+.content_sim_card {
+    display: grid;
+    grid-template-rows: 121px 3fr;
+}
+
+.sim_card_box_title {
+    cursor: pointer;
+}
+
+.sim_card_box_title .sim_card_box_title_big {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.sim_card_box_title .sim_card_box_title_sim {
+    font-size: 1em;
+}
+
+.sim_card_box_wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr 0.1fr;
+    grid-gap: 10px;
+}
+.sim_card_showAll{
+    font-size: 1.1em;
+    font-weight: bold;
+    color: black;
+}
+.sim_card_img{
+    border-radius: 3px;
+    overflow: hidden;
+}
+.sim_card_img img{
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.sim_card_box div{
+    margin: 3px 0;
+    cursor: pointer;
+}
+
+
+/*简介*/
+.sim_card_introduction span {
+    font-size: 0.8em;
+    color: rgb(118, 118, 118);
+    font-weight: bold;
+}
+
+/*标题*/
+.sim_card_title {
+    min-width: 240px;
+    font-weight: bold;
+    font-size: 1em;
+    color: rgb(72, 72, 72);
+}
+
+.sim_card_price span {
+    font-size: 0.9em;
+    color: rgb(72, 72, 72);
+}
+

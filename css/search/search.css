@@ -1,0 +1,190 @@
+@import url("//unpkg.com/element-ui@2.15.6/lib/theme-chalk/index.css");
+
+.el-carousel__item h3 {
+    color: #475669;
+    font-size: 14px;
+    opacity: 0.75;
+    line-height: 150px;
+    margin: 0;
+}
+
+.el-carousel__item:nth-child(2n) {
+    background-color: #99a9bf;
+}
+
+.el-carousel__item:nth-child(2n+1) {
+    background-color: #d3dce6;
+}
+
+.wrapper_application {
+    display: grid;
+    width: 100%;
+    grid-template-rows: 0.3fr auto;
+    height: 500px;
+    grid-gap: 30px;
+}
+
+/*导航栏*/
+.content_nav {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 0.3fr;
+    height: 48px;
+}
+
+/*左侧按钮列表*/
+.content_nav_btn_list {
+    min-width: 720px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    height: 48px;
+    align-items: center;
+    justify-self: left;
+    grid-gap: 5px;
+    margin-left: 10px;
+}
+
+.content_nav_btn_list div {
+    border: 1px solid #dce0e0;
+    border-radius: 3px;
+    padding: 6px 10px;
+    text-align: center;
+    font-size: 0.8em;
+    width: auto;
+}
+
+.content_nav_btn_list div:hover {
+    background: rgb(242, 242, 242);
+    cursor: pointer;
+}
+
+/*右侧*/
+.content_nav_is-disabled {
+    display: grid;
+    min-width: 220px;
+    align-items: center;
+    justify-self: center;
+}
+
+
+/*显示地图的情况*/
+.application_content {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 0.7fr;
+    grid-gap: 10px;
+}
+
+.application_content_left_search_list_box{
+
+    display: grid;
+    grid-template-rows: 0.1fr 1fr;
+    grid-gap: 25px 10px;
+    margin-left: 10px;
+}
+.application_content_left_search_msg{
+    font-size: 1.3em;
+    font-weight: bold;
+}
+.content_card_list{
+    display: grid;
+    grid-template-rows: auto;
+    grid-gap: 10px 30px;
+    height: auto;
+}
+/*设置单个卡片样式*/
+/*图片圆角*/
+.el-carousel--horizontal{
+    border-radius: 5px;
+}
+.content_wrapper_card{
+    cursor: pointer;
+    border-radius: 9px;
+    border: 1px solid rgb(235, 235, 235);
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 0.8fr;
+    grid-gap: 20px;
+    padding: 20px;
+    height: 202px;
+}
+.content_wrapper_img_box{
+    width: 340px;
+    height: 150px;
+}
+.content_card_info_wrapper{
+    display: grid;
+    grid-template-rows: 0.8fr 2fr 2fr;
+}
+.content_card_info{
+    font-size: 0.5em;
+    color: rgb(118,118,118);
+    font-weight: bold;
+}
+
+.content_card_title div{
+    font-size: 1em;
+    font-weight: bold;
+    color: rgb(72,72,72);
+}
+
+.content_card_mark  span{
+    display: inline-block;
+    color: rgb(72, 72, 72);
+    border-radius: 15px;
+    background: rgb(242,242,242);
+    padding: 5px;
+    font-size: 0.1em;
+    margin: 3px 3px;
+    font-weight: 600;
+}
+.content_card_mark_score{
+    background: #EAF7EA !important;
+    color: #296E00 !important;;
+}
+.content_card_mark_house{
+    color: #8A2400 !important;
+    background: #f7f3ea !important;
+}
+.content_card_mark_invoice{
+    color: #8A2400 !important;
+    background: #f7f3ea !important;
+}
+
+/*右侧内容*/
+.content_card_house_wrapper {
+    border-left: 1px solid rgb(235,235,235);
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+}
+/*价格*/
+.content_card_house_price_num{
+    text-align: right;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: rgb(72,72,72);
+}
+.content_card_house_price_msg{
+    text-align: right;
+}
+.content_card_house_img{
+    position: relative;
+}
+.content_card_house_img div{
+    position: absolute;
+    right: 3px;
+    bottom: 5px;
+    text-align: right;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 36px;
+    height: 36px;
+}
+
+/*地图*/
+.content_map_box{
+}
+
+ #allmap{
+     min-width: 100%;
+     min-height: 100%;
+}

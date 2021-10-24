@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../css/comm/element-ui.css">
+    <link rel="stylesheet" href="../../css/search/search.css">
+
+    <!--    <link rel="stylesheet" href="../../css/search/ele.css">-->
+    <link rel="import" href="../../html/comm/head.html" id="head1">
+    <style>
+        #container {
+            width: 600px;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper_application">
+    <!--    导航栏-->
+    <div class="content_nav">
+        <!--        左边-->
+        <div class="content_nav_btn_list">
+            <div>日期</div>
+            <div>人数</div>
+            <div>可免费取消</div>
+            <div>房源类型</div>
+            <div>价格</div>
+            <div>位置区域</div>
+            <div>闪订</div>
+            <div>更多筛选条件</div>
+        </div>
+        <div class="content_nav_is-disabled" id="el_btn">
+            <div>
+                <el-tooltip :content="'Switch value: ' + value" placement="top">
+                    <el-switch
+                            v-model="value"
+                            active-color="#13ce66"
+                            inactive-color="#ff4949"
+                            active-value="100"
+                            inactive-value="0"
+                            active-text="开启地图"
+                            inactive-text="关闭地图"
+                    >
+                    </el-switch>
+                </el-tooltip>
+            </div>
+        </div>
+    </div>
+    <!--    显示地图的情况-->
+    <div class="application_content">
+        <div class="application_content_left_search_list_box">
+            <div class="application_content_left_search_msg"> 多处住宿</div>
+            <!--            卡片列表-->
+            <div class="content_card_list" id="content_card_img">
+                <!--               单个卡片 -->
+                <template>
+                    <div class="content_wrapper_card">
+                        <!--                    图片-->
+                        <div class="content_wrapper_img_box">
+                            <template>
+                                <div class="block">
+                                    <el-carousel trigger="click"  height="200px">
+                                        <el-carousel-item v-for="item in imgList" :key="item">
+                                            <h3 class="small">
+                                                <img :src="item" alt="图片出错" height="100%" width="100%" >
+                                            </h3>
+                                        </el-carousel-item>
+                                    </el-carousel>
+                                </div>
+                            </template>
+                        </div>
+                        <!--                    信息-->
+                        <div class="content_card_info_wrapper">
+                            <div class="content_card_info">
+                                <span>整套公寓型住宅</span>
+                                <span>·</span>
+                                <span>一室一卫一床</span>
+                            </div>
+                            <div class="content_card_title">
+                                <div>【超高性价比】one近牡丹广场地铁|浪漫轻奢高端公寓|涧西区万达广场|国际商业综合体|超干净舒适大床</div>
+                            </div>
+                            <!--                        动态加载span-->
+                            <div class="content_card_mark">
+                                <!--                            评论-->
+                                <span class="content_card_mark_score">5.0分 · 7条评论</span>
+                                <span class="content_card_mark_house">超赞房东</span>
+                                <span class="content_card_mark_invoice">可开发票</span>
+                                <span class="content_card_mark_other">灵活退改</span>
+                            </div>
+                        </div>
+                        <!--                    房东信息-->
+                        <div class="content_card_house_wrapper">
+                            <div class="content_card_house_price">
+                                <div class="content_card_house_price_num">￥159</div>
+                                <div class="content_card_house_price_msg">/晚</div>
+                            </div>
+                            <div class="content_card_house_img">
+                                <div style="background-position: center; background-image: url('https://z1.muscache.cn/im/pictures/user/88632374-63aa-4b40-a78b-a755b330437f.jpg?aki_policy=profile_small')"></div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+
+            </div>
+        </div>
+
+
+        <!--        地图-->
+        <div class="content_map_box">
+            <div id="container"></div>
+        </div>
+    </div>
+
+    <!--    不显示地图-->
+    <div></div>
+</div>
+<script src="../../js/comm/vue.js"></script>
+<script src="../../js/comm/axios.min.js"></script>
+<script src="../../js/comm/element-ui.js"></script>
+<script src="../../js/search/search.js"></script>
+<script type="text/javascript"
+        src="https://webapi.amap.com/maps?v=1.4.15&key=9f7b59f6e61e519ae492ca4b030d6f2f"></script>
+<script type="text/javascript">
+    var map = new AMap.Map('container', {
+        zoom: 11,//级别
+        center: [116.397428, 39.90923],//中心点坐标
+        viewMode: '3D'//使用3D视图
+    });
+</script>
+
+</body>
+</html>
