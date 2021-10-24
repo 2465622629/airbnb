@@ -1,3 +1,5 @@
+import apiList  from "../comm/urlList";
+
 let app = new Vue({
     el: "#template_app",
     data: {
@@ -35,7 +37,7 @@ let app = new Vue({
         ]
     }, mounted() {
         let that = this
-        axios.get('http://rap2api.taobao.org/app/mock/292165/houseInfo')
+        axios.get(apiList.house_card_info)
             .then(function (resp) {
                 that.house_card = resp.data.house_card_list
             })
