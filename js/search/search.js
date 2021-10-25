@@ -4,6 +4,7 @@ let app = new Vue({
         value: "100",
     }
 })
+
 new Vue({
     el:"#content_card_img",
     data:{
@@ -26,5 +27,3 @@ new Vue({
         }
     }
 }).$mount('#content_card_img')
-
-
