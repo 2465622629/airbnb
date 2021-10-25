@@ -221,19 +221,32 @@
     width: 100%;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-
+    border-bottom: 1px solid $border_bottom;
+    height: 100px;
     .house_icon {
+      height: 75px;
       display: grid;
       align-items: center;
       text-align: center;
       justify-self: center;
       grid-template-columns: auto;
-      grid-template-rows: 1fr 0.3fr;
+      grid-template-rows: 1fr 1fr;
+      
+      div:nth-child(1){
+          margin-bottom: 10px;
+      }
+      div:nth-child(2){
+        font-size: 0.9em;
+    }
     }
 
   }
 }
-
+.evaluate_title{
+  font-size: 1.6em;
+  font-weight: bold;
+  color: rgb(72, 72, 72);
+}
 // 评价
 .tenant_evaluate_box {
   .evaluate_icon_box {
@@ -245,14 +258,37 @@
 .evaluate_type_box_wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-
+  border-bottom: 1px solid $border_bottom;
+  padding-bottom: 35px;
   .evaluate_type_box_left {
     display: grid;
     grid-template-rows: repeat(3, 1fr);
-
     .evaluate_type_box {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      grid-gap: 0px 20px;
+    }
+
+    .evaluate_type_msg {
+      span {
+        i {
+          font-size: 1em;
+          color: $start_color;
+        }
+
+      }
+    }
+  }
+
+  .evaluate_type_box_right{
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    .evaluate_type_box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 0px 20px;
     }
 
     .evaluate_type_msg {
@@ -272,6 +308,7 @@
   .evaluate_type_mark_list {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
+    @include border_bottom(25px);
     // grid-template-columns: repeat(8,auto);
     .evaluate_mark {
       display: inline-block;

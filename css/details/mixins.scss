@@ -1,0 +1,6 @@
+@mixin border-bottom($margin_bottom) {
+    border-bottom: 1px solid $border_bottom;
+    margin-bottom: $margin_bottom;
+    padding-bottom: $margin_bottom;
+    margin-top: $margin_bottom;
+}

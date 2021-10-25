@@ -1,359 +1,403 @@
 @import url("//unpkg.com/element-ui@2.15.6/lib/theme-chalk/index.css");
-
 .content_top_img {
-    width: 100%;
-    height: 500px;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 3fr 1fr 1fr;
-    grid-template-columns: 3fr 1fr 1fr;
-    background: #222222;
-    -ms-grid-rows: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-gap: 3px;
+  width: 100%;
+  height: 500px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 3fr 1fr 1fr;
+      grid-template-columns: 3fr 1fr 1fr;
+  background: #222222;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  grid-gap: 3px;
 }
 
 .content_top_img div:nth-child(1) {
-    -ms-grid-row: span 2;
-    grid-row-start: span 2;
+  -ms-grid-row: span 2;
+      grid-row-start: span 2;
 }
 
 .content_box_wrapper {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 0.8fr;
-    grid-template-columns: 1fr 0.8fr;
-    -ms-grid-rows: auto;
-    grid-template-rows: auto;
-    grid-gap: 50px;
-    margin: 0 auto;
-    width: 70%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 0.8fr;
+      grid-template-columns: 1fr 0.8fr;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  grid-gap: 50px;
+  margin: 0 auto;
+  width: 70%;
 }
 
 .content_box_wrapper .left_content_wrapper {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-rows: auto;
-    grid-template-rows: auto;
-    grid-gap: 20px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  grid-gap: 20px;
 }
 
 .content_box_wrapper .left_content_wrapper .top_tag {
-    width: 80%;
-    border-bottom: 1px solid #ebebeb;
+  width: 80%;
+  border-bottom: 1px solid #ebebeb;
 }
 
 .content_box_wrapper .top_tag span {
-    display: inline-block;
-    color: #008489;
-    font-weight: bold;
-    font-size: 0.9em;
-    padding: 16px 0px;
-    cursor: pointer;
+  display: inline-block;
+  color: #008489;
+  font-weight: bold;
+  font-size: 0.9em;
+  padding: 16px 0px;
+  cursor: pointer;
 }
 
 .house_info_box {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-rows: (auto) [ 4 ];
-    grid-template-rows: repeat(4, auto);
-    grid-gap: 5px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (auto)[4];
+      grid-template-rows: repeat(4, auto);
+  grid-gap: 5px;
 }
 
 .house_info_box .house_info {
-    font-size: 0.3em;
-    font-weight: bold;
-    color: #14275e;
+  font-size: 0.3em;
+  font-weight: bold;
+  color: #14275e;
 }
 
 .house_info_box .house_info_title {
-    font-size: 1.5em;
-    font-weight: bold;
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
 .house_info_box .house_mark_box span {
-    display: inline-block;
-    border-radius: 5px;
-    font-size: 0.5em;
-    font-weight: bold;
-    color: #484848;
+  display: inline-block;
+  border-radius: 5px;
+  font-size: 0.5em;
+  font-weight: bold;
+  color: #484848;
 }
 
 .house_info_box .house_mark_box .house_mark_score {
-    color: #2a6e00;
+  color: #2a6e00;
 }
 
 .house_info_box .house_mark_box .house_mark_invoice {
-    color: #6e4800;
+  color: #6e4800;
 }
 
 .host_info_box {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-rows: (auto) [ 2 ];
-    grid-template-rows: repeat(2, auto);
-    grid-gap: 10px;
-    border-bottom: 1px solid #ebebeb;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (auto)[2];
+      grid-template-rows: repeat(2, auto);
+  grid-gap: 10px;
+  border-bottom: 1px solid #ebebeb;
 }
 
 .host_info_box .host_head_box {
-    font-weight: bold;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 0.1fr 1fr;
-    grid-template-columns: 0.1fr 1fr;
-    -ms-grid-rows: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-gap: 18px;
+  font-weight: bold;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 0.1fr 1fr;
+      grid-template-columns: 0.1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  grid-gap: 18px;
 }
 
 .host_info_box .host_head_box .call_host span:nth-child(2) {
-    color: #008489;
-    cursor: pointer;
+  color: #008489;
+  cursor: pointer;
 }
 
 .host_info_box .host_head_box .host_head_img {
-    -ms-grid-row: span 2;
-    grid-row-start: span 2;
-    width: 64px;
-    height: 64px;
-    overflow: hidden;
-    border-radius: 50%;
+  -ms-grid-row: span 2;
+      grid-row-start: span 2;
+  width: 64px;
+  height: 64px;
+  overflow: hidden;
+  border-radius: 50%;
 }
 
 .host_evaluate_box {
-    background-color: #f8f8f8;
-    width: 100%;
-    height: 180px;
-    border-radius: 5px;
-    margin-bottom: 40px;
+  background-color: #f8f8f8;
+  width: 100%;
+  height: 180px;
+  border-radius: 5px;
+  margin-bottom: 40px;
 }
 
 .host_evaluate_box .host_evaluate_content {
-    overflow: hidden;
-    padding: 12px;
-    color: #484848;
+  overflow: hidden;
+  padding: 12px;
+  color: #484848;
 }
 
 .host_evaluate_box .host_evaluate_content p {
-    line-height: 1.5em;
+  line-height: 1.5em;
 }
 
 .host_evaluate_box .host_evaluate_content .host_evaluate_more {
-    color: #008489;
-    font-weight: bold;
+  color: #008489;
+  font-weight: bold;
 }
 
 .house_bad_box {
-    border-bottom: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
 }
 
 .house_bad_box .house_bad_card_box {
-    width: 150px;
-    height: 150px;
-    border-radius: 5px;
+  width: 150px;
+  height: 150px;
+  border-radius: 5px;
 }
 
 .house_bad_box .house_bad_card_box .house_bad_card {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-rows: (auto) [ 3 ];
-    grid-template-rows: repeat(3, auto);
-    border: 1px solid #ebebeb;
-    padding: 10px;
-    overflow: hidden;
-    border-radius: 5px;
-    grid-gap: 5px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (auto)[3];
+      grid-template-rows: repeat(3, auto);
+  border: 1px solid #ebebeb;
+  padding: 10px;
+  overflow: hidden;
+  border-radius: 5px;
+  grid-gap: 5px;
 }
 
 .house_bad_box .house_bad_card_box .house_bad_card .house_bad_card_describe {
-    font-size: 0.6em;
+  font-size: 0.6em;
 }
 
 .airbnb_guarantee_box .airbnb_guarantee {
-    font-weight: bold;
-    border-bottom: 1px solid #ebebeb;
-    height: 80px;
-    line-height: 58px;
+  font-weight: bold;
+  border-bottom: 1px solid #ebebeb;
+  height: 80px;
+  line-height: 58px;
 }
 
 .airbnb_guarantee_box .airbnb_guarantee span {
-    display: inline-block;
+  display: inline-block;
 }
 
 .airbnb_guarantee_box .airbnb_guarantee span:nth-child(1) {
-    margin-bottom: -5px;
+  margin-bottom: -5px;
 }
 
 .airbnb_guarantee_box .airbnb_guarantee span:nth-child(3) {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 .airbnb_guarantee_box .airbnb_guarantee span:nth-child(4) {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 .all_house_info_box {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-rows: (auto) [ 4 ];
-    grid-template-rows: repeat(4, auto);
-    grid-gap: 24px;
-    border-bottom: 1px solid #ebebeb;
-    padding-bottom: 40px;
-    margin-top: 24px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (auto)[4];
+      grid-template-rows: repeat(4, auto);
+  grid-gap: 24px;
+  border-bottom: 1px solid #ebebeb;
+  padding-bottom: 40px;
+  margin-top: 24px;
 }
 
 .all_house_info_box div {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 3fr;
-    grid-template-columns: 1fr 3fr;
-    grid-gap: 0 30px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3fr;
+      grid-template-columns: 1fr 3fr;
+  grid-gap: 0 30px;
 }
 
 .all_house_info_box div span:nth-child(1) {
-    display: inline-block;
-    font-weight: bold;
-    color: #484848;
+  display: inline-block;
+  font-weight: bold;
+  color: #484848;
 }
 
 .all_house_icon_box .icon_box {
-    width: 100%;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (1fr) [ 6 ];
-    grid-template-columns: repeat(6, 1fr);
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[6];
+      grid-template-columns: repeat(6, 1fr);
+  border-bottom: 1px solid #ebebeb;
+  height: 100px;
 }
 
 .all_house_icon_box .icon_box .house_icon {
-    display: -ms-grid;
-    display: grid;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    text-align: center;
-    -ms-grid-column-align: center;
-    justify-self: center;
-    -ms-grid-columns: auto;
-    grid-template-columns: auto;
-    -ms-grid-rows: 1fr 0.3fr;
-    grid-template-rows: 1fr 0.3fr;
+  height: 75px;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+}
+
+.all_house_icon_box .icon_box .house_icon div:nth-child(1) {
+  margin-bottom: 10px;
+}
+
+.all_house_icon_box .icon_box .house_icon div:nth-child(2) {
+  font-size: 0.9em;
+}
+
+.evaluate_title {
+  font-size: 1.6em;
+  font-weight: bold;
+  color: #484848;
 }
 
 .tenant_evaluate_box .evaluate_icon_box {
-    color: #008489;
+  color: #008489;
 }
 
 .evaluate_type_box_wrapper {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid #ebebeb;
+  padding-bottom: 35px;
 }
 
 .evaluate_type_box_wrapper .evaluate_type_box_left {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-rows: (1fr) [ 3 ];
-    grid-template-rows: repeat(3, 1fr);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[3];
+      grid-template-rows: repeat(3, 1fr);
 }
 
 .evaluate_type_box_wrapper .evaluate_type_box_left .evaluate_type_box {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 0px 20px;
 }
 
 .evaluate_type_box_wrapper .evaluate_type_box_left .evaluate_type_msg span i {
-    font-size: 1em;
-    color: #008489;
+  font-size: 1em;
+  color: #008489;
+}
+
+.evaluate_type_box_wrapper .evaluate_type_box_right {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[3];
+      grid-template-rows: repeat(3, 1fr);
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.evaluate_type_box_wrapper .evaluate_type_box_right .evaluate_type_box {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 0px 20px;
+}
+
+.evaluate_type_box_wrapper .evaluate_type_box_right .evaluate_type_msg span i {
+  font-size: 1em;
+  color: #008489;
 }
 
 .evaluate_type_mark .evaluate_type_mark_list {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-rows: (1fr) [ 2 ];
-    grid-template-rows: repeat(2, 1fr);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+  border-bottom: 1px solid #ebebeb;
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+  margin-top: 25px;
 }
 
 .evaluate_type_mark .evaluate_type_mark_list .evaluate_mark {
-    display: inline-block;
-    text-align: center;
-    font-size: 0.8em;
-    font-weight: bold;
-    padding: 0 8px;
-    line-height: 34px;
-    height: 34px;
-    background-color: #ebf5f6;
-    color: #008489;
-    border-radius: 5px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  font-size: 0.8em;
+  font-weight: bold;
+  padding: 0 8px;
+  line-height: 34px;
+  height: 34px;
+  background-color: #ebf5f6;
+  color: #008489;
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .evaluate_type_mark .evaluate_type_mark_list .evaluate_mark span:nth-child(2) {
-    font-weight: lighter;
+  font-weight: lighter;
 }
 
 .evaluate_box .evaluate_details_box {
-    display: -ms-grid;
-    display: grid;
-    width: 100%;
-    -ms-grid-rows: (auto) [ 7 ];
-    grid-template-rows: repeat(7, auto);
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+  -ms-grid-rows: (auto)[7];
+      grid-template-rows: repeat(7, auto);
 }
 
 .evaluate_box .evaluate_details_box .evaluate_card {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-rows: 1fr minmax(0, 160px);
-    grid-template-rows: 1fr minmax(0, 160px);
-    border-bottom: 1px solid #ebebeb;
-    max-height: 207px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr minmax(0, 160px);
+      grid-template-rows: 1fr minmax(0, 160px);
+  border-bottom: 1px solid #ebebeb;
+  max-height: 207px;
 }
 
 .evaluate_box .evaluate_details_box .evaluate_card .evaluate_user_head_box {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 10fr;
-    grid-template-columns: 1fr 10fr;
-    -ms-grid-rows: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-gap: 5px 10px;
-    margin-top: 25px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 10fr;
+      grid-template-columns: 1fr 10fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  grid-gap: 5px 10px;
+  margin-top: 25px;
 }
 
 .evaluate_box .evaluate_details_box .evaluate_card .evaluate_user_head_box .evaluate_user_head_img {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    overflow: hidden;
-    -ms-grid-row: span 2;
-    grid-row-start: span 2;
-    -ms-grid-column-align: center;
-    justify-self: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  overflow: hidden;
+  -ms-grid-row: span 2;
+      grid-row-start: span 2;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .evaluate_box .evaluate_details_box .evaluate_card .evaluate_user_head_box .evaluate_uer_name span {
-    font-weight: bold;
-    color: #484848;
+  font-weight: bold;
+  color: #484848;
 }
 
 .evaluate_box .evaluate_details_box .evaluate_card .evaluate_content p {
-    display: inline-block;
-    margin-top: 15px;
-    word-break: break-all;
+  display: inline-block;
+  margin-top: 15px;
+  word-break: break-all;
 }
 
 .evaluate_box .evaluate_page_list {
-    max-width: 430px;
-    height: 40px;
+  max-width: 430px;
+  height: 40px;
 }
-
 /*# sourceMappingURL=details.css.map */
