@@ -7,4 +7,3 @@ let app = new Vue({
 })
 
 
-new Vue().$mount('#app')

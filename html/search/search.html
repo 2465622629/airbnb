@@ -5,8 +5,7 @@
     <title>Title</title>
     <link rel="stylesheet" href="../../css/comm/element-ui.css">
     <link rel="stylesheet" href="../../css/search/search.css">
-
-    <!--    <link rel="stylesheet" href="../../css/search/ele.css">-->
+<!--    <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css"/>-->
     <link rel="import" href="../../html/comm/head.html" id="head1">
     <style>
         #container {
@@ -54,8 +53,8 @@
             <!--            卡片列表-->
             <div class="content_card_list" id="content_card_img">
                 <!--               单个卡片 -->
-                <template>
-                    <div class="content_wrapper_card">
+                <template v-for="item in card_info">
+                    <div class="content_wrapper_card" @click="">
                         <!--                    图片-->
                         <div class="content_wrapper_img_box">
                             <template>
@@ -73,17 +72,17 @@
                         <!--                    信息-->
                         <div class="content_card_info_wrapper">
                             <div class="content_card_info">
-                                <span>整套公寓型住宅</span>
+                                <span>{{item.house_info}}</span>
                                 <span>·</span>
                                 <span>一室一卫一床</span>
                             </div>
                             <div class="content_card_title">
-                                <div>【超高性价比】one近牡丹广场地铁|浪漫轻奢高端公寓|涧西区万达广场|国际商业综合体|超干净舒适大床</div>
+                                <div>{{item.house_title}}</div>
                             </div>
                             <!--                        动态加载span-->
                             <div class="content_card_mark">
                                 <!--                            评论-->
-                                <span class="content_card_mark_score">5.0分 · 7条评论</span>
+                                <span class="content_card_mark_score">{{item.house_mark.score}}分 · 7条评论</span>
                                 <span class="content_card_mark_house">超赞房东</span>
                                 <span class="content_card_mark_invoice">可开发票</span>
                                 <span class="content_card_mark_other">灵活退改</span>
@@ -92,7 +91,7 @@
                         <!--                    房东信息-->
                         <div class="content_card_house_wrapper">
                             <div class="content_card_house_price">
-                                <div class="content_card_house_price_num">￥159</div>
+                                <div class="content_card_house_price_num">{{item.house_price}}</div>
                                 <div class="content_card_house_price_msg">/晚</div>
                             </div>
                             <div class="content_card_house_img">
@@ -102,13 +101,17 @@
                     </div>
                 </template>
 
+
+
             </div>
         </div>
 
 
         <!--        地图-->
         <div class="content_map_box">
-            <div id="container"></div>
+            <div id="container">-
+
+            </div>
         </div>
     </div>
 
@@ -121,13 +124,7 @@
 <script src="../../js/search/search.js"></script>
 <script type="text/javascript"
         src="https://webapi.amap.com/maps?v=1.4.15&key=9f7b59f6e61e519ae492ca4b030d6f2f"></script>
-<script type="text/javascript">
-    var map = new AMap.Map('container', {
-        zoom: 11,//级别
-        center: [116.397428, 39.90923],//中心点坐标
-        viewMode: '3D'//使用3D视图
-    });
-</script>
+<script src="../../js/search/map.js"></script>
 
 </body>
 </html>
