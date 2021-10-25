@@ -5,3 +5,6 @@ let app = new Vue({
     },mounted() {
     }
 })
+
+
+new Vue().$mount('#app')
