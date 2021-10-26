@@ -54,7 +54,7 @@
             <div class="content_card_list" id="content_card_img">
                 <!--               单个卡片 -->
                 <template v-for="item in card_info">
-                    <div class="content_wrapper_card" @click="">
+                    <div class="content_wrapper_card" @click="move_position">
                         <!--                    图片-->
                         <div class="content_wrapper_img_box">
                             <template>
@@ -82,7 +82,7 @@
                             <!--                        动态加载span-->
                             <div class="content_card_mark">
                                 <!--                            评论-->
-                                <span class="content_card_mark_score">{{item.house_mark.score}}分 · 7条评论</span>
+                                <span class="content_card_mark_score">{{item.house_mark[0].score}}分 · 7条评论</span>
                                 <span class="content_card_mark_house">超赞房东</span>
                                 <span class="content_card_mark_invoice">可开发票</span>
                                 <span class="content_card_mark_other">灵活退改</span>
@@ -91,7 +91,7 @@
                         <!--                    房东信息-->
                         <div class="content_card_house_wrapper">
                             <div class="content_card_house_price">
-                                <div class="content_card_house_price_num">{{item.house_price}}</div>
+                                <div class="content_card_house_price_num">￥{{item.house_price}}</div>
                                 <div class="content_card_house_price_msg">/晚</div>
                             </div>
                             <div class="content_card_house_img">
@@ -118,10 +118,10 @@
 <script src="../../js/comm/vue.js"></script>
 <script src="../../js/comm/axios.min.js"></script>
 <script src="../../js/comm/element-ui.js"></script>
-<script src="../../js/search/search.js"></script>
 <script type="text/javascript"
         src="https://webapi.amap.com/maps?v=1.4.15&key=9f7b59f6e61e519ae492ca4b030d6f2f"></script>
-<script src="../../js/search/map.js"></script>
-<script src="../../js/search/main.js"></script>
+<!--<script src="../../js/search/map.js"></script>-->
+<script src="../../js/search/search.js"></script>
+<!--<script src="../../js/search/main.js"></script>-->
 </body>
 </html>
