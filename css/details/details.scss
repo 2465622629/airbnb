@@ -2,7 +2,6 @@
 @import "mixins";
 @import url("//unpkg.com/element-ui@2.15.6/lib/theme-chalk/index.css");
 
-
 //头部大图
 .content_top_img {
   width: 100%;
@@ -38,13 +37,12 @@
     grid-gap: 20px;
   }
 
-
   .top_tag span {
     display: inline-block;
     color: $font_color_green;
     font-weight: bold;
     font-size: $small_font_size + 0.3em;
-    padding: 16px 0px;
+    padding: 16px 0;
     cursor: pointer;
   }
 }
@@ -58,7 +56,7 @@
   .house_info {
     font-size: $small_font_size_ordinary;
     font-weight: bold;
-    color: rgb(20, 39, 94);;
+    color: rgb(20, 39, 94);
   }
 
   .house_info_title {
@@ -83,7 +81,6 @@
       color: rgb(110, 72, 0);
     }
   }
-
 }
 
 // 房东介绍
@@ -137,7 +134,6 @@
       font-weight: bold;
     }
   }
-
 }
 
 // 卧室图片
@@ -175,7 +171,6 @@
 
     span {
       display: inline-block;
-
     }
 
     span:nth-child(1) {
@@ -191,7 +186,6 @@
     }
   }
 }
-
 
 // 整个房源
 .all_house_info_box {
@@ -223,6 +217,7 @@
     grid-template-columns: repeat(6, 1fr);
     border-bottom: 1px solid $border_bottom;
     height: 100px;
+
     .house_icon {
       height: 75px;
       display: grid;
@@ -231,22 +226,24 @@
       justify-self: center;
       grid-template-columns: auto;
       grid-template-rows: 1fr 1fr;
-      
-      div:nth-child(1){
-          margin-bottom: 10px;
-      }
-      div:nth-child(2){
-        font-size: 0.9em;
-    }
-    }
 
+      div:nth-child(1) {
+        margin-bottom: 10px;
+      }
+
+      div:nth-child(2) {
+        font-size: 0.9em;
+      }
+    }
   }
 }
-.evaluate_title{
+
+.evaluate_title {
   font-size: 1.6em;
   font-weight: bold;
   color: rgb(72, 72, 72);
 }
+
 // 评价
 .tenant_evaluate_box {
   .evaluate_icon_box {
@@ -260,13 +257,15 @@
   grid-template-columns: 1fr 1fr;
   border-bottom: 1px solid $border_bottom;
   padding-bottom: 35px;
+
   .evaluate_type_box_left {
     display: grid;
     grid-template-rows: repeat(3, 1fr);
+
     .evaluate_type_box {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-gap: 0px 20px;
+      grid-gap: 0 20px;
     }
 
     .evaluate_type_msg {
@@ -275,20 +274,18 @@
           font-size: 1em;
           color: $start_color;
         }
-
       }
     }
   }
 
-  .evaluate_type_box_right{
+  .evaluate_type_box_right {
     display: grid;
     grid-template-rows: repeat(3, 1fr);
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
+
     .evaluate_type_box {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-gap: 0px 20px;
+      grid-gap: 0 20px;
     }
 
     .evaluate_type_msg {
@@ -297,7 +294,6 @@
           font-size: 1em;
           color: $start_color;
         }
-
       }
     }
   }
@@ -316,7 +312,6 @@
       span:nth-child(2) {
         font-weight: lighter;
       }
-
       text-align: center;
       font-size: 0.8em;
       font-weight: bold;
@@ -332,7 +327,6 @@
     }
   }
 }
-
 
 // 评价详情
 .evaluate_box {
@@ -386,5 +380,110 @@
   .evaluate_page_list {
     max-width: 430px;
     height: 40px;
+  }
+}
+
+// 订单
+.right_order_wrapper {
+  position: relative;
+
+  .order_box {
+    border: 1px solid $border_bottom;
+    width: 75%;
+    height: 500px;
+    margin-top: 30px;
+    margin-left: 38px;
+    padding: 30px;
+
+    .order_top_info_box {
+      // 价格
+      .order_price {
+        span:nth-child(1) {
+          color: rgb(0, 132, 137);
+          font-weight: bold;
+          font-size: 1.6em;
+        }
+        span:nth-child(2){
+          text-decoration: line-through;
+          color: rgb(118, 118, 118);
+        }
+      }
+
+      //优惠
+      .order_discount_list{
+        display: grid;
+        grid-template-rows: 1fr;
+        .order_discount_list_line{
+          div{
+            display: inline-block;
+          }
+          color: rgb(118, 118, 118);
+          font-size: 0.6em;
+        }
+
+        
+      }
+      .order_score_box{
+        .order_score{
+          .stars i{
+            color:$start_color;
+            font-size:$stars_size;
+          }
+        }
+      }
+      @include border-bottom(10px);
+    }
+
+    // 下半部分
+    .order_other_box{
+      display: grid;
+      grid-template-rows: repeat(8,auto);
+      grid-gap: 10px;
+      .order_date_text{
+        font-size: 0.6em;
+        font-weight: bold;
+      }
+
+      .price_details{
+        font-size: 1em;
+        font-weight: 400;
+        .price_original{
+          width: 100%;
+          font-size: 1em;
+          font-weight: 500;
+          @include border-bottom(10px);
+          div{
+            display: inline-block;
+          }
+          .price_original_left{
+            width: 80%;
+            font-weight: 400;
+            color:rgb(72, 72, 72);
+            .price_disscount{
+              color:#008489;
+            }
+          }
+          .price_original_right{
+            margin-right: 0;
+          }
+        }
+      }
+      // 提交订单
+      .order_submit_btn{
+        div{
+          div{
+            width: 85%;
+            background-color: #ff5a5f;
+            font-weight: bold;
+            color: white;
+            font-size: 1.2em;
+            padding: 15px 22px;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+          }
+        }
+      }
+    }
   }
 }

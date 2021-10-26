@@ -5,9 +5,13 @@
     <title>Title</title>
     <link rel="stylesheet" href="../../css/comm/element-ui.css">
     <link rel="stylesheet" href="../../css/index/index.css">
-    <link rel="import" href="../../html/comm/head.html" id="head1">
+<!--    <link rel="import" href="../../html/comm/head.html" id="head1">-->
 </head>
 <body>
+<div class="top_nav">
+
+</div>
+
 <div class="application">
     <div class="wrapper_img">
         <div class="wrapper_img_item">
@@ -376,9 +380,15 @@
         </div>
     </div>
 </div>
+<script src="../../js/comm/jq.js"></script>
 <script src="../../js/comm/vue.js"></script>
 <script src="../../js/comm/axios.min.js"></script>
 <script src="../../js/comm/element-ui.js"></script>
 <script src="../../js/index/index.js"></script>
+<script>
+    $(function () {
+        $(".top_nav").load('../../html/comm/head.html')
+    })
+</script>
 </body>
 </html>

@@ -7,7 +7,6 @@
 */
 
 
-
 *{
     margin: 0;
     padding: 0;
@@ -25,8 +24,9 @@
 
 .wrapper_nav div{
    text-align: center;
-    color: #000000;
+    color: rgb(72,72,72);
     font-weight: bold;
+    font-size: 0.9em;
 }
 
 .wrapper_nav_item {
@@ -49,6 +49,13 @@ input{
 .wrapper_nav_item_search{
     position: relative;
 }
+.wrapper_nav_item_search i{
+    position: absolute;
+    left: 21%;
+    bottom: 30%;
+    font-weight: bold;
+    font-size: 1.3em;
+}
 
 .wrapper_nav_item_search input{
     width: 60%;
@@ -56,11 +63,13 @@ input{
     font-size: 1.3em;
     border-radius: 5px;
     border: none;
+    position: relative;
 }
 
 
 /*用户头像*/
 .wrapper_nav_item_user_logo{
+    text-align: center !important;
 }
 
 .wrapper_nav_item_user_logo div {
