@@ -20,21 +20,19 @@ new Vue({
             'https://z1.muscache.cn/im/pictures/miso/Hosting-52016005/original/ebe7ce04-61a7-4238-85bb-fa0e63d53ccf.jpeg?aki_policy=large'
         ],
         card_info: null,
-        test_position: [108.823464, 38.583683],
+        test_position: [112.492381,34.680255], //112.492381,34.680255 112.474401,34.644831
         position_list: null
 
     }, mounted() {
         this.get_card_info()
+        this.addBox_list()
     }, methods: {
         get_card_info: function () {
             let that = this
             axios.get("http://rap2api.taobao.org/app/mock/292165/search_res")
                 .then(function (resp) {
                     that.card_info = resp.data.house_res_list
-                    console.log(that.card_info)
                 })
-        }, add_box: function () {
-            let that = this
         }, move_position: function () {
             this.addPoint(this.test_position)
             map.panTo(this.test_position)
@@ -42,47 +40,11 @@ new Vue({
             new AMap.InfoWindow({
                 content: "hello",
             }).open(map, position)
-        }, getPosition_List: function (cityList) {
-            let keywords = cityList[0]
-            // 获取搜索信息
-            function autoInput() {
-                AMap.plugin('AMap.PlaceSearch', function () {
-                    var autoOptions = {
-                        city: '全国'
-                    }
-                    var placeSearch = new AMap.PlaceSearch(autoOptions);
-                    placeSearch.search(keywords, function (status, result) {
-                        alert("查询结果")
-                        console.log(result)
-                    })
-                })
-            }
-            autoInput()
-
-        }, getCoordinates: function (search_list) {  //获取坐标
-            let cityList = []
-            for (let item in search_list) {
-                cityList.push(item.house_address)
-                console.log(item.house_address)
+        },addBox_list:function () {
+            let position_list = [[112.474401,34.644831],[112.46557,34.619306]]
+            for (let i = 0; i < position_list.length; i++) {
+                this.addPoint(position_list[i])
             }
         }
     }
 }).$mount('#content_card_img')
-
-
-
-// function autoInput(){
-//     var keywords = '北京大学';
-//     AMap.plugin('AMap.PlaceSearch', function(){
-//         var autoOptions = {
-//             city: '全国'
-//         }
-//         var placeSearch = new AMap.PlaceSearch(autoOptions);
-//         placeSearch.search(keywords, function(status, result) {
-//             // 搜索成功时，result即是对应的匹配数据
-//             console.log(result)
-//         })
-//     })
-// }
-//
-// autoInput();

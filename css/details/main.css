@@ -485,7 +485,7 @@
 
 .right_order_wrapper .order_box .order_other_box .price_details .price_original .price_original_left {
   width: 80%;
-  font-weight: bold;
+  font-weight: 400;
   color: #484848;
 }
 

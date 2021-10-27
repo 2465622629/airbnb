@@ -40,5 +40,11 @@ let app = new Vue({
             .then(function (resp) {
                 that.house_card = resp.data.house_card_list
             })
+    },methods:{
+        card_an:function () {
+            console.log(this)
+        },search_target:function () {
+            window.location.href = '../../html/search/search.html'
+        }
     }
 })
