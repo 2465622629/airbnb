@@ -6,8 +6,7 @@
 
 */
 
-
-*{
+* {
     margin: 0;
     padding: 0;
 }
@@ -22,42 +21,52 @@
     height: 80px;
 }
 
-.wrapper_nav div{
-   text-align: center;
-    color: rgb(72,72,72);
+.wrapper_nav div {
+    text-align: center;
+    color: white;
     font-weight: bold;
     font-size: 0.9em;
 }
 
 .wrapper_nav_item {
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
 }
-.wrapper_nav_item div{
+.wrapper_nav_item div {
     width: 33.33%;
     display: inline-block;
 }
-input{
+input {
     outline: none;
 }
 
 /*设置详细样式*/
-.wrapper_nav_item_logo img{
+.wrapper_nav_item_logo img {
     width: 70%;
 }
 
 /*搜索框*/
-.wrapper_nav_item_search{
+.wrapper_nav_item_search {
     position: relative;
 }
-.wrapper_nav_item_search i{
+.wrapper_nav_item_search input {
+    padding-left: 30px;
+    box-sizing: border-box;
+}
+.wrapper_nav_item_search input::-webkit-input-placeholder {
+    font-size: 0.9em;
+    font-weight: 800;
+    color: rgb(131, 125, 125);
+}
+.wrapper_nav_item_search i {
     position: absolute;
     left: 21%;
     bottom: 30%;
     font-weight: bold;
     font-size: 1.3em;
+    color: black;
 }
 
-.wrapper_nav_item_search input{
+.wrapper_nav_item_search input {
     width: 60%;
     height: 46px;
     font-size: 1.3em;
@@ -66,17 +75,17 @@ input{
     position: relative;
 }
 
-
 /*用户头像*/
-.wrapper_nav_item_user_logo{
+.wrapper_nav_item_user_logo {
     text-align: center !important;
 }
 
 .wrapper_nav_item_user_logo div {
     box-shadow: rgb(235 235 235) 0px 0px 0px;
-    background: rgb(242,242,242);
+    background: rgb(242, 242, 242);
     width: 28px;
     height: 28px;
     border-radius: 50%;
     overflow: hidden;
+    margin-left: 40px;
 }

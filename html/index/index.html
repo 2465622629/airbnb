@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="../../css/comm/element-ui.css">
     <link rel="stylesheet" href="../../css/index/index.css">
-<!--    <link rel="import" href="../../html/comm/head.html" id="head1">-->
+    <!--    <link rel="import" href="../../html/comm/head.html" id="head1">-->
 </head>
+
 <body>
-<div class="top_nav">
+    <div class="top_nav">
 
-</div>
+    </div>
 
-<div class="application">
-    <div class="wrapper_img">
+    <div class="application">
+        <div class="wrapper_img">
+        </div>
         <div class="wrapper_img_item">
             <div class="wrapper_img_item_img"></div>
         </div>
@@ -36,12 +39,8 @@
                     <template>
                         <div class="block">
                             <span class="demonstration"></span>
-                            <el-date-picker
-                                    v-model="value1"
-                                    type="daterange"
-                                    range-separator="至"
-                                    start-placeholder="开始日期"
-                                    end-placeholder="结束日期">
+                            <el-date-picker v-model="value1" type="daterange" range-separator="至"
+                                start-placeholder="开始日期" end-placeholder="结束日期">
                             </el-date-picker>
                         </div>
                     </template>
@@ -59,6 +58,15 @@
                 <div class="content_preferential_msg">品质房源，低至5折</div>
                 <!--        选项卡-->
                 <div class="content_tab">
+                    <!-- 选项卡切换按钮 -->
+                    <div class="content_tab_left_btn">
+                        <span>
+                            << /span>
+                    </div>
+
+                    <div class="content_tab_rigth_btn">
+                        <span>></span>
+                    </div>
                     <ul>
                         <li v-for="item in locationList">
                             <span>{{ item }}</span>
@@ -70,13 +78,11 @@
                 <div class="content_house_card_box">
                     <!--            里面装房源卡片-->
                     <!--                单个卡片-->
-                    <template v-for="(card_item,index) in house_card" >
-                        <div class="house_card house_card_title_hover" :id="index" @mouseover="card_an()" >
+                    <template v-for="(card_item,index) in house_card">
+                        <div class="house_card" :key=`big_card_${index}` :id=`big_card_${index}`>
                             <div class="house_card_img">
-                                <img
-                                        width="100%"
-                                        :src="card_item.house_imgUrl"
-                                        :alt="card_item.house_imgUrl">
+                                <img width="100%" height="100%" :src="card_item.house_imgUrl"
+                                    :alt="card_item.house_imgUrl">
                             </div>
                             <div class="house_card_brief">
                                 <span>{{ card_item.house_info }}</span>
@@ -110,12 +116,12 @@
                     </div>
                     <div class="sim_card_box_wrapper">
                         <!--            单个卡片-->
-                        <template  v-for="item in house_card">
+                        <template v-for="item in house_card">
                             <div class="sim_card_box">
                                 <!--                图片-->
                                 <div class="sim_card_img">
                                     <img src="https://z1.muscache.cn/im/pictures/bcad4334-0d7c-4bd8-aeb1-987715b78af0.jpg?aki_policy=large"
-                                         width="100%" alt="">
+                                        width="100%" alt="">
                                 </div>
                                 <div class="sim_card_introduction">
                                     <span>{{item.house_info}}</span>
@@ -154,6 +160,7 @@
                 <div class="content_preferential_title">探索上海精彩之地</div>
                 <!--        选项卡-->
                 <div class="content_tab">
+
                     <ul>
                         <li v-for="item in locationList">
                             <span>{{ item }}</span>
@@ -168,10 +175,7 @@
                     <template v-for="(card_item,index) in house_card">
                         <div class="house_card" :id="index">
                             <div class="house_card_img">
-                                <img
-                                        width="100%"
-                                        :src="card_item.house_imgUrl"
-                                        :alt="card_item.house_imgUrl">
+                                <img width="100%" :src="card_item.house_imgUrl" :alt="card_item.house_imgUrl">
                             </div>
                             <div class="house_card_brief">
                                 <span>{{ card_item.house_info }}</span>
@@ -210,7 +214,7 @@
                             <!--                图片-->
                             <div class="sim_card_img">
                                 <img src="https://z1.muscache.cn/im/pictures/bcad4334-0d7c-4bd8-aeb1-987715b78af0.jpg?aki_policy=large"
-                                     width="100%" alt="">
+                                    width="100%" alt="">
                             </div>
                             <div class="sim_card_introduction">
                                 <span>{{item.house_info}}</span>
@@ -250,12 +254,12 @@
                 </div>
                 <div class="sim_card_box_wrapper">
                     <!--            单个卡片-->
-                    <template  v-for="item in house_card">
+                    <template v-for="item in house_card">
                         <div class="sim_card_box">
                             <!--                图片-->
                             <div class="sim_card_img">
                                 <img src="https://z1.muscache.cn/im/pictures/bcad4334-0d7c-4bd8-aeb1-987715b78af0.jpg?aki_policy=large"
-                                     width="100%" alt="">
+                                    width="100%" alt="">
                             </div>
                             <div class="sim_card_introduction">
                                 <span>{{item.house_info}}</span>
@@ -299,7 +303,7 @@
                             <!--                图片-->
                             <div class="sim_card_img">
                                 <img src="https://z1.muscache.cn/im/pictures/bcad4334-0d7c-4bd8-aeb1-987715b78af0.jpg?aki_policy=large"
-                                     width="100%" alt="">
+                                    width="100%" alt="">
                             </div>
                             <div class="sim_card_introduction">
                                 <span>{{item.house_info}}</span>
@@ -350,10 +354,7 @@
                     <template v-for="(card_item,index) in house_card">
                         <div class="house_card" :id="index">
                             <div class="house_card_img">
-                                <img
-                                        width="100%"
-                                        :src="card_item.house_imgUrl"
-                                        :alt="card_item.house_imgUrl">
+                                <img width="100%" :src="card_item.house_imgUrl" :alt="card_item.house_imgUrl">
                             </div>
                             <div class="house_card_brief">
                                 <span>{{ card_item.house_info }}</span>
@@ -378,18 +379,19 @@
                 <div class="content_preferential_end_text">查看更多{{}} 房源 ></div>
             </div>
         </div>
+
     </div>
-</div>
-<script src="../../js/comm/jq.js"></script>
-<script src="../../js/comm/vue.js"></script>
-<script src="../../js/comm/axios.min.js"></script>
-<script src="../../js/comm/element-ui.js"></script>
-<script src="../../js/index/index.js"></script>
-<script>
-    // 加载导航栏
-    $(function () {
-        $(".top_nav").load('../../html/comm/head.html')
-    })
-</script>
+    <script src="../../js/comm/jq.js"></script>
+    <script src="../../js/comm/vue.js"></script>
+    <script src="../../js/comm/axios.min.js"></script>
+    <script src="../../js/comm/element-ui.js"></script>
+    <script src="../../js/index/index.js"></script>
+    <script>
+        // 加载导航栏
+        $(function () {
+            $(".top_nav").load('../../html/comm/head.html')
+        })
+    </script>
 </body>
+
 </html>

@@ -10,6 +10,7 @@ let app = new Vue({
     }
 })
 
+
 new Vue({
     el: "#content_card_img",
     data: {
@@ -25,7 +26,8 @@ new Vue({
 
     }, mounted() {
         this.get_card_info()
-        this.addBox_list()
+        this.addPoint(this.test_position,"",156,"cardId")
+        this.getEleId()
     }, methods: {
         get_card_info: function () {
             let that = this
@@ -33,18 +35,25 @@ new Vue({
                 .then(function (resp) {
                     that.card_info = resp.data.house_res_list
                 })
-        }, move_position: function () {
-            this.addPoint(this.test_position)
-            map.panTo(this.test_position)
-        }, addPoint: function (position) {
-            new AMap.InfoWindow({
-                content: "hello",
-            }).open(map, position)
-        },addBox_list:function () {
-            let position_list = [[112.474401,34.644831],[112.46557,34.619306]]
-            for (let i = 0; i < position_list.length; i++) {
-                this.addPoint(position_list[i])
-            }
+        },addPoint:function (position,content,price,id) {
+            let info = []
+            // info.push("<div @click='move_view' id="+id+" style='background-color: white;padding: 6px 11px;>￥"+price+"</div>")
+            info.push(`<div id=${id} style='background-color: white;padding: 6px 11px; border-radius: 3px;font-weight: 800'>￥${price}</div>`)
+            new AMap.Marker({
+                map: map,
+                position: position,
+                content:info.join(""),
+                animation:'AMAP_ANIMATION_DROP'
+            });
+        },move_view:function (position) {
+            map.panTo(position)
+        },getEleId:function () {
+            let mapId = document.getElementById('cardId')
+            console.log(mapId)
         }
     }
 }).$mount('#content_card_img')
+
+
+
+

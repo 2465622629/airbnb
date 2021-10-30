@@ -1,4 +1,3 @@
-
 let app = new Vue({
     el: "#template_app",
     data: {
@@ -40,11 +39,15 @@ let app = new Vue({
             .then(function (resp) {
                 that.house_card = resp.data.house_card_list
             })
-    },methods:{
-        card_an:function () {
-            console.log(this)
-        },search_target:function () {
+    }, methods: {
+        search_target: function () {
             window.location.href = '../../html/search/search.html'
+        },drop:function(){
+            alert("hello world")
         }
     }
 })
+
+
+
+let search = document.getElementsByClassName("wrapper_nav_item_search")
