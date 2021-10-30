@@ -14,18 +14,33 @@
 .wrapper_nav {
     width: 100%;
     display: inline-grid;
-    grid-template-columns: 1fr 3fr repeat(5, 0.5fr);
+    grid-template-columns: 1fr 3fr 2.5fr;
     grid-template-rows: 1fr;
     justify-self: center;
     align-items: center;
     height: 80px;
 }
 
+.nav_right_content{
+    display: grid;
+    grid-template-columns: repeat(5,minmax(1em,10em));
+    justify-self: center;
+    align-items: center;
+    grid-column-gap: 10px;
+}
+.nav_right_content div{
+    height: 80px;
+    line-height: 80px;
+}
+
+.nav_right_content div:hover{
+    border-bottom: 2px solid white;
+}
+
 .wrapper_nav div {
     text-align: center;
     color: white;
     font-weight: bold;
-    font-size: 0.9em;
 }
 
 .wrapper_nav_item {
