@@ -1,0 +1,97 @@
+.main{
+    width: 90%;
+    height: auto;
+    margin: 0px auto;
+}
+.app_box{
+    display: grid;
+    grid-template-rows: repeat(auto-fit,minmax(3em,10em));
+}
+
+.house_list_container{
+    width: 100%;
+    display: grid;
+    grid-template-rows: repeat(auto-fit,minmax(3em,10em));
+    grid-template-columns: repeat(3,1fr);
+    grid-row-gap: 136px;
+    grid-column-gap: 50px;
+}
+/*单个喜欢*/
+.like_box{
+    width: 100%;
+    height: 210px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 13em auto auto;
+    grid-gap: 10px;
+    cursor: pointer;
+}
+.like_box:hover .like_box_msg{
+    text-decoration: underline;
+}
+.like_box_imgList{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    grid-template-rows: repeat(2,1fr);
+    grid-gap: 3px;
+    overflow: hidden;
+    border-radius: 16px;
+}
+.like_box_msg{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.like_box_date{
+    font-size: 0.3em;
+}
+
+.img_left_big{
+    grid-row-start: span 2;
+    width: 100%;
+    height: 100%;
+    background: url("https://z1.muscache.cn/im/pictures/miso/Hosting-52016005/original/79ba4f99-7a05-4a24-bbfb-639e6cb2355d.jpeg?aki_policy=large");
+    background-size: cover;
+    background-position: center;
+}
+.img_right_top{
+    width: 100%;
+    height: 100%;
+    background: url("https://z1.muscache.cn/im/pictures/miso/Hosting-52016005/original/79ba4f99-7a05-4a24-bbfb-639e6cb2355d.jpeg?aki_policy=large");
+    background-size: cover;
+    background-position: center;
+}
+.img_right_bottom{
+    width: 100%;
+    height: 100%;
+    background: url("https://z1.muscache.cn/im/pictures/miso/Hosting-52016005/original/79ba4f99-7a05-4a24-bbfb-639e6cb2355d.jpeg?aki_policy=large");
+    background-size: cover;
+    background-position: center;
+}
+/*媒体查询*/
+@media screen and (max-width: 650px){
+    .house_list_container{
+        width: 100%;
+        display: grid;
+        grid-template-rows: repeat(auto-fit,minmax(3em,10em));
+        grid-template-columns: repeat(2,1fr);
+        grid-row-gap: 136px;
+        grid-column-gap: 50px;
+    }
+
+}
+
+
+/*显示一行*/
+@media screen and (max-width: 500px){
+    .house_list_container{
+        width: 100%;
+        display: grid;
+        grid-template-rows: repeat(auto-fit,minmax(3em,10em));
+        grid-template-columns: 1fr;
+        grid-gap: 30px;
+        grid-row-gap: 136px;
+    }
+
+}
