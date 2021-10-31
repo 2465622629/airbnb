@@ -3,7 +3,6 @@
 1.用户头像添加白色圆角边框
 2.搜索框添加小图标
 3.搜索框添加动效
-
 */
 @import url("//unpkg.com/element-ui@2.15.6/lib/theme-chalk/index.css");
 * {
@@ -74,7 +73,7 @@ input {
     width: 60%;
     height: 46px;
     font-size: 1.3em;
-    border-radius: 5px;
+    border-radius: 5px 5px 0 0;
     border: none;
     position: relative;
     padding-left: 40px;
@@ -127,9 +126,11 @@ input {
 
 }
 .search_content{
+    border-radius: 0 0 5px 5px;
     background: white;
-    transition: 1s;
-    left: 24.5%;
+    transition: 0.35s;
+    left: 24.65%;
+    top: 63px;
     position: absolute;
     overflow: hidden;
     display: grid;

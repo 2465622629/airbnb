@@ -21,7 +21,7 @@ search.addEventListener('focus',function () { // 获取焦点
 
 search.addEventListener('blur',function () {
     flag = false
-    // showHistoryList(flag)
+    showHistoryList(flag)
     flag = true
     this.style.width = '60%'
 })
@@ -66,7 +66,7 @@ function showHistoryList(isShow) {
     let dom = document.querySelector('.search_content')
     console.log(dom)
     if (isShow){
-        dom.style.width = '31em'
+        dom.style.width = '30.95em'
         dom.style.height = 'auto'
     }else {
         dom.style.width = '0em'
