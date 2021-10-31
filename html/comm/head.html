@@ -10,22 +10,23 @@
 <!--头部导航栏-->
 <div class="wrapper_nav">
     <!--    logo-->
-    <div class="wrapper_nav_item_logo">
+    <div class="wrapper_nav_item_logo" id="index_home">
         <img src="../../img/logo.png" alt="">
     </div>
     <!--    搜索框-->
     <div class="wrapper_nav_item_search">
         <input type="text" placeholder="按城市、地址、地标搜索">
-
         <i class="el-icon-search"></i>
     </div>
 
 <!--    右侧-->
     <div class="nav_right_content">
         <!--    跳转页面-->
-        <div class="wrapper_nav_item_user_like">
+        <a href="../UserLike/userLike.html">
+            <div class="wrapper_nav_item_user_like">
             心愿单
         </div>
+        </a>
         <div class="wrapper_nav_item_history">
             历史足迹
         </div>
@@ -36,10 +37,8 @@
             登录
         </div>
         <div class="wrapper_nav_item_user_logo">
-            <div>
-                <img src="../../img/userLogo.jpg"
-                     width="28px" height="28px">
-            </div>
+<!--            用户头像-->
+            <div> </div>
         </div>
     </div>
 
@@ -47,6 +46,6 @@
 <script src="../../js/comm/vue.js"></script>
 <script src="../../js/comm/axios.min.js"></script>
 <script src="../../js/comm/element-ui.js"></script>
-
+<script src="../../js/comm/head.js"></script>
 </body>
 </html>

@@ -50,4 +50,5 @@ let app = new Vue({
 
 
 
-let search = document.getElementsByClassName("wrapper_nav_item_search")
+// let search = document.querySelector('.wrapper_nav_item_search input')
+// console.log(search)

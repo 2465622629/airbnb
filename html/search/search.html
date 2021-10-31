@@ -53,11 +53,11 @@
             <div class="content_card_list" id="content_card_img">
                 <!--               单个卡片 -->
                 <template v-for="item in card_info">
-                    <div class="content_wrapper_card">
+                    <div class="content_wrapper_card" @click="move_view([112.492381,34.680255])">
                         <!--                    图片-->
                         <div class="content_wrapper_img_box">
                             <template>
-                                <div class="block">
+                                <div class="block" id="test_block">
                                     <el-carousel trigger="click"  height="200px">
                                         <el-carousel-item v-for="item in imgList" :key="item">
                                             <h3 class="small">
@@ -121,5 +121,12 @@
         src="https://webapi.amap.com/maps?v=1.4.15&key=9f7b59f6e61e519ae492ca4b030d6f2f"></script>
 <script src="https://webapi.amap.com/maps?v=1.4.15&key=9f7b59f6e61e519ae492ca4b030d6f2f&plugin=AMap.PlaceSearch"></script>
 <script src="../../js/search/search.js"></script>
+<script>
+    onload(function () {
+        let d = document.getElementById("test_block")
+        console.log(d)
+    })
+
+</script>
 </body>
 </html>

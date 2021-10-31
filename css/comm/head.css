@@ -5,7 +5,7 @@
 3.搜索框添加动效
 
 */
-
+@import url("//unpkg.com/element-ui@2.15.6/lib/theme-chalk/index.css");
 * {
     margin: 0;
     padding: 0;
@@ -31,16 +31,20 @@
 .nav_right_content div{
     height: 80px;
     line-height: 80px;
+    box-sizing: border-box;
 }
 
 .nav_right_content div:hover{
     border-bottom: 2px solid white;
+    box-sizing: border-box;
 }
 
 .wrapper_nav div {
     text-align: center;
     color: white;
     font-weight: bold;
+    box-sizing: border-box;
+    cursor: pointer;
 }
 
 .wrapper_nav_item {
@@ -64,11 +68,20 @@ input {
     position: relative;
 }
 .wrapper_nav_item_search input {
-    padding-left: 30px;
+    transition: 0.35s;
+    width: 60%;
+    height: 46px;
+    font-size: 1.3em;
+    border-radius: 5px;
+    border: none;
+    position: relative;
+    padding-left: 40px;
     box-sizing: border-box;
+    float: left;
+    left: 20%;
 }
 .wrapper_nav_item_search input::-webkit-input-placeholder {
-    font-size: 0.9em;
+    font-size: 0.8em;
     font-weight: 800;
     color: rgb(131, 125, 125);
 }
@@ -81,14 +94,7 @@ input {
     color: black;
 }
 
-.wrapper_nav_item_search input {
-    width: 60%;
-    height: 46px;
-    font-size: 1.3em;
-    border-radius: 5px;
-    border: none;
-    position: relative;
-}
+
 
 /*用户头像*/
 .wrapper_nav_item_user_logo {
@@ -103,4 +109,8 @@ input {
     border-radius: 50%;
     overflow: hidden;
     margin-left: 40px;
+    margin-top: 25px;
+    background: url("../../img/userLogo.jpg");
+    background-position: center;
+    background-size: cover;
 }
