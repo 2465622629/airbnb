@@ -12,7 +12,7 @@
 
 /*头部导航栏*/
 .top_nav {
-  height: 81px;
+  height: 500px;
   position: absolute;
   top: 0;
   z-index: 3;

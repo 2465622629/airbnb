@@ -12,7 +12,9 @@
 }
 /*划分网格 公共*/
 .wrapper_nav {
+    position: relative;
     width: 100%;
+
     display: inline-grid;
     grid-template-columns: 1fr 3fr 2.5fr;
     grid-template-rows: 1fr;
@@ -113,4 +115,55 @@ input {
     background: url("../../img/userLogo.jpg");
     background-position: center;
     background-size: cover;
+}
+
+
+/*搜索内容推荐*/
+.search_msg_box{
+    width: 31em;
+    /*width: 0;*/
+    /*height: 0;*/
+    overflow: hidden;
+
+}
+.search_content{
+    background: white;
+    transition: 1s;
+    left: 24.5%;
+    position: absolute;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5,1fr);
+    grid-row-gap: 2px;
+
+    width: 0;
+    height: 0;
+
+}
+.search_msg_box{
+    display: grid;
+    grid-template-columns: 0.1fr 1fr;
+    grid-template-rows:repeat(2,1fr);
+    padding: 5px;
+}
+
+.search_msg_icon{
+    grid-row-start: span 2;
+    align-items: center;
+    justify-self: center;
+    overflow: hidden;
+    padding-top: 10px;
+}
+
+.search_msg_city{
+    font-weight: bold;
+    font-size: 1em;
+}
+.search_msg_date{
+    font-size: 0.9em;
+}
+.search_content .search_msg_box:hover{
+    cursor: pointer;
+    background: rgb(242,242,242);
 }

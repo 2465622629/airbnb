@@ -31,7 +31,7 @@ let app = new Vue({
         locationList: ['贵阳', '重庆', '成都', '长沙', '北京', '厦门', '上海', '广州'],
         house_card: [
             // {"id": 0, "house_imgUrl": "../../img/01.jpg", "house_info": "别墅", "house_title": "我是标题", "house_price": 123},
-            // {"id": 2, "house_imgUrl": "../../img/01.jpg", "house_info": "别墅", "house_title": "我是标题", "house_price": 123}
+            // {"id": 2, "house_imgjUrl": "../../img/01.jpg", "house_info": "别墅", "house_title": "我是标题", "house_price": 123}
         ]
     }, mounted() {
         let that = this
@@ -47,8 +47,3 @@ let app = new Vue({
         }
     }
 })
-
-
-
-// let search = document.querySelector('.wrapper_nav_item_search input')
-// console.log(search)
