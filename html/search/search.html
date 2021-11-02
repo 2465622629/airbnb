@@ -7,41 +7,45 @@
     <link rel="stylesheet" href="../../css/search/search.css">
     <link rel="import" href="../../html/comm/head.html" id="head1">
     <style>
-	@import url("//unpkg.com/element-ui@2.15.6/lib/theme-chalk/index.css");
+        @import url("//unpkg.com/element-ui@2.15.6/lib/theme-chalk/index.css");
+
         #container {
             width: 600px;
             height: 600px;
         }
-		.el-carousel__item h3 {
-		    color: #475669;
-		    font-size: 14px;
-		    opacity: 0.75;
-		    line-height: 150px;
-		    margin: 0;
-		  }
 
-		  .el-carousel__item:nth-child(2n) {
-		     background-color: #99a9bf;
-		  }
+        .el-carousel__item h3 {
+            color: #475669;
+            font-size: 14px;
+            opacity: 0.75;
+            line-height: 150px;
+            margin: 0;
+        }
 
-		  .el-carousel__item:nth-child(2n+1) {
-		     background-color: #d3dce6;
-		  }
-		  .card_ddblock{
-		    width:300px;
-		    height:300px;
-		  }
-		.map_card{
-			width: 250px;
-			height: 230px;
-			background-color: white;
-		}
+        .el-carousel__item:nth-child(2n) {
+            background-color: #99a9bf;
+        }
+
+        .el-carousel__item:nth-child(2n+1) {
+            background-color: #d3dce6;
+        }
+
+        .card_ddblock {
+            width: 300px;
+            height: 300px;
+        }
+
+        .map_card {
+            width: 250px;
+            height: 230px;
+            background-color: white;
+        }
 
     </style>
 </head>
 <body>
 
-	<!-- <object type="text/x-scriptlet" data="../../html/comm/head.html" class="top_nav" width=100% height=300></object> -->
+<!-- <object type="text/x-scriptlet" data="../../html/comm/head.html" class="top_nav" width=100% height=300></object> -->
 <div class="wrapper_application">
     <!--    导航栏-->
     <div class="content_nav">
@@ -74,25 +78,26 @@
         </div>
     </div>
     <!--    显示地图的情况-->
-    <div class="application_content" >
+    <div class="application_content">
         <div class="application_content_left_search_list_box">
 
             <!--            卡片列表-->
             <div class="content_card_list" id="content_card_img">
-				<div class="application_content_left_search_msg">{{card_length}} 多处住宿</div>
+                <div class="application_content_left_search_msg">{{ card_length }} 多处住宿</div>
                 <!--               单个卡片 -->
                 <template v-for="(item,index) in card_info">
 
-					<!-- <div>{{item.house_brief}}</div> -->
-                    <div class="content_wrapper_card" :key="item.house_id" @click="move_view([112.492381,34.680255])" @dblclick="target_details(item.house_id)">
+                    <!-- <div>{{item.house_brief}}</div> -->
+                    <div class="content_wrapper_card" :key="item.house_id" @click="move_view([112.492381,34.680255])"
+                         @dblclick="target_details(item.house_id)">
                         <!--                    图片-->
                         <div class="content_wrapper_img_box">
                             <template v-model="houst_img">
                                 <div class="block" id="test_block">
-                                    <el-carousel trigger="click"  height="200px">
+                                    <el-carousel trigger="click" height="200px">
                                         <el-carousel-item v-for="item in houst_img" :key="item">
-                                            <h3 class="small" >
-                                                <img :src="`../../${item}`" alt="图片出错" height="100%" width="100%" >
+                                            <h3 class="small">
+                                                <img :src="`../../${item}`" alt="图片出错" height="100%" width="100%">
                                             </h3>
                                         </el-carousel-item>
                                     </el-carousel>
@@ -102,17 +107,19 @@
                         <!--                    信息-->
                         <div class="content_card_info_wrapper">
                             <div class="content_card_info">
-                                <span>{{item.house_brief}}</span>
+                                <span>{{ item.house_brief }}</span>
                                 <span>·</span>
-                                <span>{{item.bedroom_num}}室{{item.bedroom_num}}卫{{item.bed_num}}床</span>
+                                <span>{{ item.bedroom_num }}室{{ item.bedroom_num }}卫{{ item.bed_num }}床</span>
                             </div>
                             <div class="content_card_title">
-                                <div>{{item.house_title}}</div>
+                                <div>{{ item.house_title }}</div>
                             </div>
                             <!--                        动态加载span-->
                             <div class="content_card_mark">
                                 <!--                            评论-->
-                                <span class="content_card_mark_score">{{item.comment_num}}分 ·  {{item.comment_score}}条评论</span>
+                                <span class="content_card_mark_score">{{ item.comment_num }}分 ·  {{
+                                        item.comment_score
+                                    }}条评论</span>
                                 <span class="content_card_mark_house">超赞房东</span>
                                 <span class="content_card_mark_invoice">可开发票</span>
                                 <span class="content_card_mark_other">灵活退改</span>
@@ -121,11 +128,11 @@
                         <!--                    房东信息-->
                         <div class="content_card_house_wrapper">
                             <div class="content_card_house_price">
-                                <div class="content_card_house_price_num">{{item.house_dollor}}</div>
+                                <div class="content_card_house_price_num">{{ item.house_dollor }}</div>
                                 <div class="content_card_house_price_msg">/晚</div>
                             </div>
                             <div class="content_card_house_img">
-                                <div style="background-position: center; :background-image:></div>
+                                <div style="background-position: center"></div>
                             </div>
                         </div>
                     </div>
@@ -135,20 +142,21 @@
 
 
         <!--        地图-->
-        <div class="content_map_box">
-            <div id="container"></div>
-        </div>
-    </div>
+        <div class=" content_map_box
+                                ">
+                                <div id="container"></div>
+                            </div>
+                        </div>
 
-    <!--    不显示地图-->
-    <div></div>
-</div>
-<script src="../../js/comm/vue.js"></script>
-<script src="../../js/comm/axios.min.js"></script>
-<script src="../../js/comm/element-ui.js"></script>
-<script type="text/javascript"
-        src="https://webapi.amap.com/maps?v=1.4.15&key=9f7b59f6e61e519ae492ca4b030d6f2f"></script>
-<script src="https://webapi.amap.com/maps?v=1.4.15&key=9f7b59f6e61e519ae492ca4b030d6f2f&plugin=AMap.PlaceSearch"></script>
-<script src="../../js/search/search.js"></script>
+                        <!--    不显示地图-->
+                        <div></div>
+                    </div>
+                    <script src="../../js/comm/vue.js"></script>
+                    <script src="../../js/comm/axios.min.js"></script>
+                    <script src="../../js/comm/element-ui.js"></script>
+                    <script type="text/javascript"
+                            src="https://webapi.amap.com/maps?v=1.4.15&key=9f7b59f6e61e519ae492ca4b030d6f2f"></script>
+                    <script src="https://webapi.amap.com/maps?v=1.4.15&key=9f7b59f6e61e519ae492ca4b030d6f2f&plugin=AMap.PlaceSearch"></script>
+                    <script src="../../js/search/search.js"></script>
 </body>
 </html>

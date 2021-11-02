@@ -36,8 +36,6 @@ let app2 = new Vue({
         console.log(window.location.search)
         // 加载时调用
         let t_position = []
-
-
        this.getImgUrlList(1)
         // 测试用
         this.getUrlPrams()

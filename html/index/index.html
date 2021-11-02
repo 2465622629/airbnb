@@ -11,237 +11,291 @@
 </head>
 
 <body>
-<!--		<object type="text/x-scriptlet" data="../../html/comm/head.html" class="top_nav" width=100% height=300></object>-->
+    <!--		<object type="text/x-scriptlet" data="../../html/comm/head.html" class="top_nav" width=100% height=300></object>-->
 
-<!--        导航条-->
-<div class="nav_tag" id="login_app" style="position: absolute;z-index: 3;">
-    <div class="wrapper_nav">
-        <!--    logo-->
-        <div class="wrapper_nav_item_logo" id="index_home">
-            <img src="../../img/logo.png" alt="">
-        </div>
-        <!--    搜索框-->
-        <div class="wrapper_nav_item_search">
-            <input type="text" placeholder="按城市、地址、地标搜索">
-            <i class="el-icon-search"></i>
-        </div>
-
-        <!--    右侧-->
-        <div class="nav_right_content">
-            <!--    跳转页面-->
-            <a href="../UserLike/userLike.html">
-                <div class="wrapper_nav_item_user_like">
-                    心愿单
-                </div>
-            </a>
-            <div class="wrapper_nav_item_history">
-                历史足迹
+    <!--        导航条-->
+    <div class="nav_tag" id="login_app" style="position: absolute;z-index: 3;">
+        <div class="wrapper_nav">
+            <!--    logo-->
+            <div class="wrapper_nav_item_logo" id="index_home">
+                <img src="../../img/logo.png" alt="">
             </div>
-            <div class="wrapper_nav_item_logo">
-                消息
-            </div>
-            <div class="wrapper_nav_item_logo"@click="dialogTableVisible = true">
-                登录
-            </div>
-            <div class="wrapper_nav_item_user_logo">
-                <!--            用户头像-->
-                <div></div>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- 搜索内容推荐 -->
-    <div class="search_msg_box">
-        <div class="search_content">
-
-            <div class="search_msg_box">
-                <!--            图标-->
-                <div class="search_msg_icon">
-                    <i class="el-icon-timer"></i>
-                </div>
-
-                <div class="search_msg_city">郑州</div>
-                <div class="search_msg_date">任何时候</div>
-            </div>
-            <div class="search_msg_box">
-                <!--            图标-->
-                <div class="search_msg_icon">
-                    <i class="el-icon-timer"></i>
-                </div>
-
-                <div class="search_msg_city">郑州</div>
-                <div class="search_msg_date">任何时候</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="login_msg_box" >
-        <!-- Table -->
-
-        <el-dialog title="登录/注册" :visible.sync="dialogTableVisible">
-            <div>
-            <el-input v-model="input" placeholder="请输入内容"></el-input>
+            <!--    搜索框-->
+            <div class="wrapper_nav_item_search">
+                <input type="text" placeholder="按城市、地址、地标搜索">
+                <i class="el-icon-search"></i>
             </div>
 
-            <div>
-                <el-input placeholder="请输入密码" v-model="input" show-password></el-input>
-            </div>
-
-            <div>
-                <el-button type="danger" :plain="true" @click="open">危险按钮</el-button>
-            </div>
-
-            <div>
-                <el-button type="danger" plain>危险按钮</el-button>
-            </div>
-        </el-dialog>
-
-
-    </div>
-</div>
-
-<!--登录窗体-->
-<!-- <div class="login_box">
-    <div class="loginpann"></div>
-</div> -->
-
-<!--登录窗体-->
-<!--<div class="login_msg_box" >-->
-<!--    &lt;!&ndash; Table &ndash;&gt;-->
-<!--<el-button type="text" @click="dialogTableVisible = true">打开嵌套表格的 Dialog</el-button>-->
-<!--<div @click="dialogTableVisible = true">点我</div>-->
-<!--<el-dialog title="收货地址" :visible.sync="dialogTableVisible">-->
-<!--  <el-table :data="gridData">-->
-<!--    <el-table-column property="date" label="日期" width="150"></el-table-column>-->
-<!--    <el-table-column property="name" label="姓名" width="200"></el-table-column>-->
-<!--    <el-table-column property="address" label="地址"></el-table-column>-->
-<!--  </el-table>-->
-<!--</el-dialog>-->
-
-<!--&lt;!&ndash; Form &ndash;&gt;-->
-<!--<el-button type="text" @click="dialogFormVisible = true">打开嵌套表单的 Dialog</el-button>-->
-
-<!--<el-dialog title="收货地址" :visible.sync="dialogFormVisible">-->
-<!--  <el-form :model="form">-->
-<!--    <el-form-item label="活动名称" :label-width="formLabelWidth">-->
-<!--      <el-input v-model="form.name" autocomplete="off"></el-input>-->
-<!--    </el-form-item>-->
-<!--    <el-form-item label="活动区域" :label-width="formLabelWidth">-->
-<!--      <el-select v-model="form.region" placeholder="请选择活动区域">-->
-<!--        <el-option label="区域一" value="shanghai"></el-option>-->
-<!--        <el-option label="区域二" value="beijing"></el-option>-->
-<!--      </el-select>-->
-<!--    </el-form-item>-->
-<!--  </el-form>-->
-<!--  <div slot="footer" class="dialog-footer">-->
-<!--    <el-button @click="dialogFormVisible = false">取 消</el-button>-->
-<!--    <el-button type="primary" @click="dialogFormVisible = false">确 定</el-button>-->
-<!--  </div>-->
-<!--</el-dialog>-->
-<!--</div>-->
-
-
-<div class="application">
-    <div class="wrapper_img">
-    </div>
-    <div class="wrapper_img_item">
-        <div class="wrapper_img_item_img"></div>
-    </div>
-    <div class="wrapper_content" id="template_app">
-        <!--悬浮搜索框-->
-        <div class="content_search">
-            <div class="search_select">
-                <div>房源</div>
-            </div>
-            <!--        搜索框-->
-            <div class="content_search_input">
-                <div class="content_search_input_box">
-                    <i class="el-icon-location"></i>
-                    <input v-model="input_city" type="text" placeholder="输入目的地、城市或景点">
-                </div>
-
-            </div>
-            <!--        选择日期-->
-            <div>
-                <template>
-                    <div class="block">
-                        <span class="demonstration"></span>
-                        <el-date-picker v-model="value1" type="daterange" range-separator="至"
-                                        start-placeholder="开始日期" end-placeholder="结束日期">
-                        </el-date-picker>
+            <!--    右侧-->
+            <div class="nav_right_content">
+                <!--    跳转页面-->
+                <a href="../UserLike/userLike.html">
+                    <div class="wrapper_nav_item_user_like">
+                        心愿单
                     </div>
-                </template>
+                </a>
+                <div class="wrapper_nav_item_history">
+                    历史足迹
+                </div>
+                <div class="wrapper_nav_item_logo">
+                    消息
+                </div>
+                <div class="wrapper_nav_item_logo" @click="dialogTableVisible = true">
+                    登录
+                </div>
+                <div class="wrapper_nav_item_user_logo">
+                    <!--            用户头像-->
+                    <div></div>
+                </div>
             </div>
-            <!--        搜索按钮-->
-            <div class="content_btn">
-                <div @click="targ_value(input_city,value1)">搜索</div>
-            </div>
+
         </div>
 
-        <!--    大卡片-->
-        <!--                国庆特惠-->
+        <!-- 搜索内容推荐 -->
+        <div class="search_msg_box">
+            <div class="search_content">
 
-        <div class="content_preferential">
-            <div class="content_preferential_title">国庆特惠房源</div>
-            <div class="content_preferential_msg">品质房源，低至5折</div>
-            <!--        选项卡-->
-            <div class="content_tab">
-                <ul>
-                    <li v-for="(item,index) in locationList" :key="index">
-                        <span @click="getHouseCardList(item)">{{ item }}</span>
-                    </li>
-                </ul>
-            </div>
-
-            <!--            可复用-->
-            <div class="content_house_card_box">
-                <!--            里面装房源卡片-->
-                <!--                单个卡片-->
-                <template v-for="(card_item,index) in house_card">
-                    <div class="house_card" :key=card_item.house_id @click="target_details(card_item.house_id)">
-                        <div class="house_card_img">
-                            <img width="100%" height="100%" :src="`../../${card_item.url}`"
-                                 :alt="card_item.url">
-                        </div>
-                        <div class="house_card_brief">
-                            <span>{{ card_item.house_brief }}</span>
-                            <span>·</span>
-                            <span>{{ card_item.bed_num }}张床</span> <!-- 动态-->
-                        </div>
-                        <div class="house_card_title">
-                            <span>{{ card_item.house_title }}</span>
-                        </div>
-
-                        <div class="house_card_price">
-                            <span>{{ card_item.house_dollor }}</span> <!--   动态      -->
-                            <span>{{ card_item.house_dollor }}</span><!--   动态      -->
-                            <span>/晚</span>
-                        </div>
-                        <div class="house_card_score">
-                            <i class="el-icon-star-on" v-for="item in house_card.comment_score">{{ item }}</i>
-                            <span>{{ card_item.comment_num }}</span>
-                            <span>超赞房东</span>
-                        </div>
+                <div class="search_msg_box">
+                    <!--            图标-->
+                    <div class="search_msg_icon">
+                        <i class="el-icon-timer"></i>
                     </div>
-                </template>
+
+                    <div class="search_msg_city">郑州</div>
+                    <div class="search_msg_date">任何时候</div>
+                </div>
+                <div class="search_msg_box">
+                    <!--            图标-->
+                    <div class="search_msg_icon">
+                        <i class="el-icon-timer"></i>
+                    </div>
+
+                    <div class="search_msg_city">郑州</div>
+                    <div class="search_msg_date">任何时候</div>
+                </div>
             </div>
-            <div class="content_preferential_end_text">查看更多{{ locationList[0] }} 房源 ></div>
         </div>
 
+        <div class="login_msg_box">
+            <!-- Table -->
 
-        <!--                好评房源-->
-        <!--    小列表-->
-        <template>
+            <el-dialog title="登录/注册" :visible.sync="dialogTableVisible">
+                <div class="input_box">
+                    <div class="input_box_name">
+                        <el-input v-model="input_name" placeholder="输入用户名"></el-input>
+                    </div>
+
+                    <div class="input_box_pwd">
+                        <el-input placeholder="请输入密码" v-model="input_pwd" show-password></el-input>
+                    </div>
+                </div>
+
+                <div class="input_btn_box">
+                <div>
+                    <el-button type="primary" width="200px" :plain="true" @click="open">登录</el-button>
+                </div>
+
+                <div>
+                    <el-button type="danger" plain width="200px" @click="open">注册</el-button>
+                </div>
+                </div>
+            </el-dialog>
+
+
+        </div>
+    </div>
+
+    <div class="application">
+        <div class="wrapper_img">
+        </div>
+        <div class="wrapper_img_item">
+            <div class="wrapper_img_item_img"></div>
+        </div>
+        <div class="wrapper_content" id="template_app">
+            <!--悬浮搜索框-->
+            <div class="content_search">
+                <div class="search_select">
+                    <div>房源</div>
+                </div>
+                <!--        搜索框-->
+                <div class="content_search_input">
+                    <div class="content_search_input_box">
+                        <i class="el-icon-location"></i>
+                        <input v-model="input_city" type="text" placeholder="输入目的地、城市或景点">
+                    </div>
+
+                </div>
+                <!--        选择日期-->
+                <div>
+                    <template>
+                        <div class="block">
+                            <span class="demonstration"></span>
+                            <el-date-picker v-model="value1" type="daterange" range-separator="至"
+                                start-placeholder="开始日期" end-placeholder="结束日期">
+                            </el-date-picker>
+                        </div>
+                    </template>
+                </div>
+                <!--        搜索按钮-->
+                <div class="content_btn">
+                    <div @click="targ_value(input_city,value1)">搜索</div>
+                </div>
+            </div>
+
+            <!--    大卡片-->
+            <!--                国庆特惠-->
+
+            <div class="content_preferential">
+                <div class="content_preferential_title">国庆特惠房源</div>
+                <div class="content_preferential_msg">品质房源，低至5折</div>
+                <!--        选项卡-->
+                <div class="content_tab">
+                    <ul>
+                        <li v-for="(item,index) in locationList" :key="index">
+                            <span @click="getHouseCardList(item)">{{ item }}</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!--            可复用-->
+                <div class="content_house_card_box">
+                    <!--            里面装房源卡片-->
+                    <!--                单个卡片-->
+                    <template v-for="(card_item,index) in house_card">
+                        <div class="house_card" :key=card_item.house_id @click="target_details(card_item.house_id)">
+                            <div class="house_card_img">
+                                <img width="100%" height="100%" :src="`../../${card_item.url}`" :alt="card_item.url">
+                            </div>
+                            <div class="house_card_brief">
+                                <span>{{ card_item.house_brief }}</span>
+                                <span>·</span>
+                                <span>{{ card_item.bed_num }}张床</span> <!-- 动态-->
+                            </div>
+                            <div class="house_card_title">
+                                <span>{{ card_item.house_title }}</span>
+                            </div>
+
+                            <div class="house_card_price">
+                                <span>{{ card_item.house_dollor }}</span> <!--   动态      -->
+                                <span>{{ card_item.house_dollor }}</span><!--   动态      -->
+                                <span>/晚</span>
+                            </div>
+                            <div class="house_card_score">
+                                <i class="el-icon-star-on" v-for="item in house_card.comment_score">{{ item }}</i>
+                                <span>{{ card_item.comment_num }}</span>
+                                <span>超赞房东</span>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+                <div class="content_preferential_end_text">查看更多{{ locationList[0] }} 房源 ></div>
+            </div>
+
+
+            <!--                好评房源-->
+            <!--    小列表-->
+            <template>
+                <div class="content_sim_card">
+                    <div class="sim_card_box_title">
+                        <div class="sim_card_box_title_big">{{ locationList[2] }}高分好评房源</div>
+                        <div class="sim_card_box_title_sim">来看看这些颇受房客好评的房源吧</div>
+                    </div>
+                    <div class="sim_card_box_wrapper">
+                        <!--            单个卡片-->
+                        <template v-for="item in good_house">
+                            <div class="sim_card_box" :key="item.house_id" @click="target_details(item.house_id)">
+                                <!--                图片-->
+                                <div class="sim_card_img">
+                                    <img :src="`../../${item.url}`" width="100%" alt="">
+                                </div>
+                                <div class="sim_card_introduction">
+                                    <span>{{ item.house_brief }}</span>
+                                    <span>·</span>
+                                    <span>{{ item.bed_num }}室{{ item.bedroom_num }}卫{{ item.bed_num }}床</span>
+                                </div>
+                                <div class="sim_card_title">
+                                    <div>{{ item.house_title }}</div>
+
+                                </div>
+                                <div class="sim_card_price">
+                                    <span>{{ item.house_dollor }}</span>
+                                    <span>{{ item.house_price }}</span>
+                                    <span>/晚</span>
+                                </div>
+                                <div class="sim_card_score">
+                                    <span class="el-icon-star-on"></span>
+                                    <span class="el-icon-star-on"></span>
+                                    <span class="el-icon-star-on"></span>
+                                    <span class="el-icon-star-on"></span>
+                                    <span class="el-icon-star-on"></span>
+                                    <span>11</span>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                    <div class="sim_card_showAll">查看全部 ></div>
+                </div>
+            </template>
+
+            <!--				精彩之地-->
+
+            <div class="content_preferential">
+                <div class="content_preferential_title">探索{{ locationList[1] }}精彩之地</div>
+                <!--        选项卡-->
+                <div class="content_tab">
+
+                    <ul>
+                        <li v-for="item in locationList">
+                            <span @click="getHouseCardList(item)">{{ item }}</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!--            可复用-->
+                <div class="content_house_card_box">
+                    <!--            里面装房源卡片-->
+                    <!--                单个卡片-->
+                    <template v-for="(card_item,index) in wonderful_list">
+                        <div class="house_card" :key="card_item.house_id" @click="target_details(card_item.house_id)">
+                            <div class="house_card_img">
+                                <img width="100%" :src="`../../${card_item.url}`" :alt="card_item.house_imgUrl">
+                            </div>
+                            <div class="house_card_brief">
+                                <span>{{ card_item.house_info }}</span>
+                                <span>·</span>
+                                <span>{{ card_item.bed_num }}张床</span> <!-- 动态-->
+                            </div>
+                            <div class="house_card_title">
+                                <span>{{ card_item.house_title }}</span>
+                            </div>
+
+                            <div class="house_card_price">
+                                <span>{{ card_item.house_price }}</span> <!--   动态      -->
+                                <span>{{ card_item.house_dollor }}</span><!--   动态      -->
+                                <span>/晚</span>
+                            </div>
+                            <div class="house_card_score">
+
+                            </div>
+                        </div>
+                    </template>
+                </div>
+                <div class="content_preferential_end_text">查看更多{{ locationList[2] }} 房源 ></div>
+            </div>
+
+
+            <!-- 现在任务 -->
+            <!--            上海高性价比-->
+            <!--    小列表-->
             <div class="content_sim_card">
                 <div class="sim_card_box_title">
-                    <div class="sim_card_box_title_big">{{ locationList[2] }}高分好评房源</div>
+                    <div class="sim_card_box_title_big">{{ locationList[3] }}高性价比房源</div>
                     <div class="sim_card_box_title_sim">来看看这些颇受房客好评的房源吧</div>
                 </div>
                 <div class="sim_card_box_wrapper">
                     <!--            单个卡片-->
-                    <template v-for="item in good_house">
-                        <div class="sim_card_box" :key="item.house_id" @click="target_details(item.house_id)">
+                    <template v-for="(item,index) in cost_performance_card">
+                        <div class="sim_card_box" :key="item.house_id">
                             <!--                图片-->
                             <div class="sim_card_img">
                                 <img :src="`../../${item.url}`" width="100%" alt="">
@@ -249,15 +303,15 @@
                             <div class="sim_card_introduction">
                                 <span>{{ item.house_brief }}</span>
                                 <span>·</span>
-                                <span>{{ item.bed_num }}室{{ item.bedroom_num }}卫{{ item.bed_num }}床</span>
+                                <span>{{ item.bedroom_num }}室{{ item.bedroom_num }}卫{{ item.bed_num }}床</span>
                             </div>
                             <div class="sim_card_title">
                                 <div>{{ item.house_title }}</div>
 
                             </div>
                             <div class="sim_card_price">
-                                <span>{{ item.house_dollor }}</span>
                                 <span>{{ item.house_price }}</span>
+                                <span>123</span>
                                 <span>/晚</span>
                             </div>
                             <div class="sim_card_score">
@@ -273,98 +327,6 @@
                 </div>
                 <div class="sim_card_showAll">查看全部 ></div>
             </div>
-        </template>
-
-        <!--				精彩之地-->
-
-        <div class="content_preferential">
-            <div class="content_preferential_title">探索{{ locationList[1] }}精彩之地</div>
-            <!--        选项卡-->
-            <div class="content_tab">
-
-                <ul>
-                    <li v-for="item in locationList">
-                        <span @click="getHouseCardList(item)">{{ item }}</span>
-                    </li>
-                </ul>
-            </div>
-
-            <!--            可复用-->
-            <div class="content_house_card_box">
-                <!--            里面装房源卡片-->
-                <!--                单个卡片-->
-                <template v-for="(card_item,index) in wonderful_list">
-                    <div class="house_card" :key="card_item.house_id" @click="target_details(card_item.house_id)">
-                        <div class="house_card_img">
-                            <img width="100%" :src="`../../${card_item.url}`" :alt="card_item.house_imgUrl">
-                        </div>
-                        <div class="house_card_brief">
-                            <span>{{ card_item.house_info }}</span>
-                            <span>·</span>
-                            <span>{{ card_item.bed_num }}张床</span> <!-- 动态-->
-                        </div>
-                        <div class="house_card_title">
-                            <span>{{ card_item.house_title }}</span>
-                        </div>
-
-                        <div class="house_card_price">
-                            <span>{{ card_item.house_price }}</span> <!--   动态      -->
-                            <span>{{ card_item.house_dollor }}</span><!--   动态      -->
-                            <span>/晚</span>
-                        </div>
-                        <div class="house_card_score">
-
-                        </div>
-                    </div>
-                </template>
-            </div>
-            <div class="content_preferential_end_text">查看更多{{ locationList[2] }} 房源 ></div>
-        </div>
-
-
-        <!-- 现在任务 -->
-        <!--            上海高性价比-->
-        <!--    小列表-->
-        <div class="content_sim_card">
-            <div class="sim_card_box_title">
-                <div class="sim_card_box_title_big">{{ locationList[3] }}高性价比房源</div>
-                <div class="sim_card_box_title_sim">来看看这些颇受房客好评的房源吧</div>
-            </div>
-            <div class="sim_card_box_wrapper">
-                <!--            单个卡片-->
-                <template v-for="(item,index) in cost_performance_card">
-                    <div class="sim_card_box" :key="item.house_id">
-                        <!--                图片-->
-                        <div class="sim_card_img">
-                            <img :src="`../../${item.url}`" width="100%" alt="">
-                        </div>
-                        <div class="sim_card_introduction">
-                            <span>{{ item.house_brief }}</span>
-                            <span>·</span>
-                            <span>{{ item.bedroom_num }}室{{ item.bedroom_num }}卫{{ item.bed_num }}床</span>
-                        </div>
-                        <div class="sim_card_title">
-                            <div>{{ item.house_title }}</div>
-
-                        </div>
-                        <div class="sim_card_price">
-                            <span>{{ item.house_price }}</span>
-                            <span>123</span>
-                            <span>/晚</span>
-                        </div>
-                        <div class="sim_card_score">
-                            <span class="el-icon-star-on"></span>
-                            <span class="el-icon-star-on"></span>
-                            <span class="el-icon-star-on"></span>
-                            <span class="el-icon-star-on"></span>
-                            <span class="el-icon-star-on"></span>
-                            <span>11</span>
-                        </div>
-                    </div>
-                </template>
-            </div>
-            <div class="sim_card_showAll">查看全部 ></div>
-        </div>
 
 
 
@@ -372,8 +334,8 @@
 
 
 
-        <!--            热门的目的地-->
-        <!--				<div class="content_preferential">
+            <!--            热门的目的地-->
+            <!--				<div class="content_preferential">
 <div class="content_preferential_title">国庆特惠房源</div>
 <div class="content_preferential_msg">品质房源，低至5折</div>
 &lt;!&ndash;        选项卡&ndash;&gt;
@@ -416,15 +378,15 @@
 </div>
 <div class="content_preferential_end_text">查看更多{{}} 房源 ></div>
 </div>-->
-    </div>
+        </div>
 
-</div>
-<script src="../../js/comm/jq.js"></script>
-<script src="../../js/comm/vue.js"></script>
-<script src="../../js/comm/axios.min.js"></script>
-<script src="../../js/comm/element-ui.js"></script>
-<script src="../../js/index/index.js"></script>
-<script src="../../js/comm/head.js"></script>
+    </div>
+    <script src="../../js/comm/jq.js"></script>
+    <script src="../../js/comm/vue.js"></script>
+    <script src="../../js/comm/axios.min.js"></script>
+    <script src="../../js/comm/element-ui.js"></script>
+    <script src="../../js/index/index.js"></script>
+    <script src="../../js/comm/head.js"></script>
 </body>
 
 </html>

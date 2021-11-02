@@ -397,10 +397,17 @@
   color: #484848;
 }
 
-.login_msg_box {
-  width: 300px;
-  height: 300px;
-  position: absolute;
-  z-index: 3;
+.input_box div {
+  margin-bottom: 15px;
+}
+
+.input_btn_box div {
+  margin-top: 10px;
+}
+
+.input_btn_box div button {
+  width: 350px;
+  margin-left: 180px;
+  margin-top: 20px;
 }
 /*# sourceMappingURL=index.css.map */
