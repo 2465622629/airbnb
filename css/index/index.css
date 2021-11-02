@@ -57,8 +57,8 @@
   display: grid;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
-  -ms-grid-rows: 150px (3fr)[6];
-      grid-template-rows: 150px repeat(6, 3fr);
+  -ms-grid-rows: 150px (3fr)[4];
+      grid-template-rows: 150px repeat(4, 3fr);
   grid-gap: 20px;
   position: absolute;
   top: 8.2%;
@@ -226,7 +226,7 @@
 
 .content_tab ul {
   padding: 0;
-  overflow: hidden;
+  height: 60px;
 }
 
 .content_tab ul li {
@@ -236,15 +236,23 @@
 .content_tab ul li span {
   display: inline-block;
   cursor: pointer;
-  color: white;
+  color: black;
   font-size: 1.2em;
   font-weight: bold;
-  margin-right: 8px;
+  margin-right: 9px;
   text-align: center;
   width: 124px;
   padding: 14px 0;
-  background: #00848a;
+  background: white;
   border-radius: 3px;
+  border: 1px solid #d8d8d8;
+}
+
+.content_tab ul li span:hover {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-box-shadow: 0px 2px 5px #797676;
+          box-shadow: 0px 2px 5px #797676;
 }
 
 /*简介*/
@@ -277,7 +285,7 @@
 
 .house_card .house_card_brief {
   color: #39576a;
-  font-size: 0.8em;
+  font-size: 0.3em;
   font-weight: bold;
 }
 

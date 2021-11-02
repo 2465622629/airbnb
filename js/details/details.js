@@ -33,9 +33,12 @@ let app = new Vue({
         html_dom:[], //基本网页信息
         head_img:[], //展示图片
         house_img:[] ,//房东头像
+        url_pra:0
     },mounted() {
+        let that = this
         // 测试用
-        this.load_html(1)
+        this.getUrlPram()
+        this.load_html(that.url_pra)
     },
 
     methods:{
@@ -79,8 +82,26 @@ let app = new Vue({
                 }).catch(function(error) {
                 console.log(error);
             })
+        },
+
+        //获取url
+        getUrlPram:function () {
+            let that = this
+            let url = window.location.search
+            let r = /\d+/
+            let res = url.match(r)
+            that.url_pra = res[0]
         }
     }
 })
+
+
+var d= "?address=%E6%B4%9B%E9%98%B3&start_date=Wed%20Nov%2017%202021%2000:00:00%20GMT+0800%20(GMT+08:00),Fri%20Nov%2026%202021%2000:00:00%20GMT+0800%20(GMT+08:00)";
+
+var list = d.split("&");
+var luoyang = list[0].split("=")[1];
+var data = list[1].split("=")[1];
+
+
 
 
