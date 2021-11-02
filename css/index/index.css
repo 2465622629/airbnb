@@ -396,4 +396,11 @@
   font-size: 0.9em;
   color: #484848;
 }
+
+.login_msg_box {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  z-index: 3;
+}
 /*# sourceMappingURL=index.css.map */

@@ -44,12 +44,11 @@ let app = new Vue({
 
 		this.getCard_good_card("成都")//小卡片
 		this.wonderful_place("长沙")
-		this.cost_performance("贵阳")
+		this.cost_performance("成都")
 	},
 	methods: {
 		//特惠
 		getHouseCardList: function(city) {
-			console.log('传入参数名称' + arguments[1])
 			let that = this
 			axios.get("http://192.168.137.152:2083/Airbnb/showHouse/showHouseinfo", {
 					params: {
@@ -97,7 +96,7 @@ let app = new Vue({
 			})
 		},
 		// 高性价比
-		cost_performance:function () {
+		cost_performance:function (city) {
 			let that = this
 			axios.get("http://192.168.137.152:2083/Airbnb/houstPraise/showHouseinfo", {
 				params: {
@@ -105,13 +104,13 @@ let app = new Vue({
 				}
 			})
 				.then(function(resp) {
+					console.log("高性价比")
 					that.cost_performance_card = resp.data.Hostimg
-
+					console.log(that.cost_performance_card)
 				}).catch(function(error) {
 				console.log(error);
 			})
-		}
-		,
+		},
 		search_city(address, start_date, end_date) {
 			console.log(address, start_date, end_date)
 			axios.get("http://192.168.137.152:2083/Airbnb/Serach/selectHouseinfo", {
@@ -138,3 +137,60 @@ let app = new Vue({
 		}
 	}
 })
+
+
+
+var Main = {
+    data() {
+      return {
+        gridData: [{
+          date: '2016-05-02',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        }, {
+          date: '2016-05-04',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        }, {
+          date: '2016-05-01',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        }, {
+          date: '2016-05-03',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        }],
+        dialogTableVisible: false,
+        dialogFormVisible: false,
+        form: {
+          name: '',
+          region: '',
+          date1: '',
+          date2: '',
+          delivery: false,
+          type: [],
+          resource: '',
+          desc: ''
+        },
+        formLabelWidth: '120px'
+      };
+    },methods:{
+		open() {
+			this.$message({
+				message: '登陆成功',
+				type: 'success'
+			});
+		},
+		openVn() {
+			const h = this.$createElement;
+			this.$message({
+				message: h('p', null, [
+					h('span', null, '内容可以是 '),
+					h('i', { style: 'color: teal' }, 'VNode')
+				])
+			});
+		}
+	}
+  };
+var Ctor = Vue.extend(Main)
+new Ctor().$mount('#login_app')
