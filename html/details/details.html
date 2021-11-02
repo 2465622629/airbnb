@@ -12,23 +12,23 @@
     <div id="app" class="application">
         <div class="content_top_img">
             <div>
-                <img src="https://z1.muscache.cn/im/pictures/miso/Hosting-43115303/original/f07c9d9f-5179-463d-8a3b-dda1026e648f.jpeg?aki_policy=xx_large"
+                <img :src=`../../${head_img[0]}`
                     width="100%" height="100%" alt="">
             </div>
             <div>
-                <img src="https://z1.muscache.cn/im/pictures/miso/Hosting-43115303/original/857ffcdd-c5bb-4879-ac8d-2813a883c531.jpeg?aki_policy=large"
+                <img :src=`../../${head_img[1]}`
                     width="100%" height="100%" alt="">
             </div>
             <div>
-                <img src="https://z1.muscache.cn/im/pictures/miso/Hosting-43115303/original/ea5c2949-1bec-46a8-aec4-86c488f9100e.jpeg?aki_policy=large"
+                <img :src=`../../${head_img[2]}`
                     width="100%" height="100%" alt="">
             </div>
             <div>
-                <img src="https://z1.muscache.cn/im/pictures/miso/Hosting-43115303/original/c5b3ae11-d8b9-4a28-ae73-90bbb4389150.jpeg?aki_policy=large"
+                <img :src=`../../${head_img[3]}`
                     width="100%" height="100%" alt="">
             </div>
             <div>
-                <img src="https://z1.muscache.cn/im/pictures/miso/Hosting-43115303/original/2f35072e-3083-4dcb-bf11-3a35c5c32bed.jpeg?aki_policy=large"
+                <img :src=`../../${head_img[4]}`
                     width="100%" height="100%" alt="">
             </div>
         </div>
@@ -64,36 +64,38 @@
                     <div class="house_info">
                         <span>上海市</span>
                         <span>·</span>
-                        <span>整套酒店式公寓</span>
+                        <span>{{html_dom.house_brief}}</span>
 
                     </div>
                     <!--            房源标题-->
-                    <div class="house_info_title">Casa-曼荼罗*短租优惠*紧邻九号线金桥站交通便利生活配套齐全，独立使用复式公寓，落地窗采光极佳</div>
+                    <div class="house_info_title">
+                        {{html_dom.house_title}}
+                    </div>
                     <!--            房源配件-->
                     <div class="house_info_parts">
                         <!--                图标-->
                         <span></span>
                         <!--                文字描述-->
-                        <span>1间卧室</span>
+                        <span>{{html_dom.bed_num}}间卧室</span>
 
                         <!--                图标-->
                         <span></span>
                         <!--                文字描述-->
-                        <span>1张床</span>
+                        <span>{{html_dom.bed_num}}张床</span>
 
                         <!--                图标-->
                         <span></span>
                         <!--                文字描述-->
-                        <span>1 间卫生间</span>
+                        <span>{{html_dom.bedroom}} 间卫生间</span>
 
                         <!--                图标-->
                         <span></span>
                         <!--                文字描述-->
-                        <span>可住 3 人</span>
+                        <span>可住 {{html_dom.people_num}} 人</span>
                     </div>
                     <!--            标签-->
                     <div class="house_mark_box">
-                        <span class="house_mark_score">4.7分 · 49条评论</span>
+                        <span class="house_mark_score">{{html_dom.comment_score}}分 · 49条评论</span>
                         <span class="house_mark_invoice">可开发票</span>
                         <span class="house_mark_other">近地铁站</span>
                         <span class="house_mark_other">可以做饭</span>
@@ -116,7 +118,7 @@
                         </div>
                         <!--房东身份-->
                         <div class="host_identity">
-                            <span>478条评价</span>
+                            <span>{{html_dom.comment_num}}条评价</span>
                             <span>·</span>
                             <span>已验证身份</span>
                         </div>
@@ -126,7 +128,8 @@
                     <div class="host_evaluate_box">
                         <!--                内容-->
                         <div class="host_evaluate_content">
-                            <p>紧邻九号线金桥站，交通便利生活配套一应俱全，独立使用复式公寓，落地窗采光极佳，精致文艺，窗外可眺望金茂大厦，适合2-3位成人居住，周边有极乐汤、碧云社区等，到世纪大道、外滩、陆家嘴、南京路、徐家汇等非常便利，精致的设计给你一个独立的温馨空间
+                            <p>
+                                {{html_dom.house_more}}
                             </p>
                             <div class="host_evaluate_more">查看更多</div>
                         </div>
@@ -535,7 +538,7 @@
                                 <div class="price_original_right">
                                     <span> ￥184</span>
                                 </div>
-                                
+
                             </div>
 
                             <div class="price_original">
@@ -548,7 +551,7 @@
                                 <div class="price_original_right">
                                     <span> ￥184</span>
                                 </div>
-                                
+
                             </div>
 
                             <div class="price_original">
@@ -561,7 +564,7 @@
                                 <div class="price_original_right">
                                     <span> ￥184</span>
                                 </div>
-                                
+
                             </div>
 
                             <div class="price_original">
@@ -575,7 +578,7 @@
                                 <div class="price_original_right">
                                     <span> ￥184</span>
                                 </div>
-                                
+
                             </div>
 
                         </div>

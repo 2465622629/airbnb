@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+  <title>给多个点添加信息窗体</title>
+  <link rel="stylesheet" href="https://cache.amap.com/lbs/static/main1119.css"/>
+  <script type="text/javascript"
+          src="https://webapi.amap.com/maps?v=1.4.15&key=9f7b59f6e61e519ae492ca4b030d6f2f"></script>
+  <script type="text/javascript" src="https://cache.amap.com/lbs/static/addToolbar.js"></script>
+</head>
+<body>
+<div id="container"></div>
+<script type="text/javascript">
+  //初始化地图对象，加载地图
+  var map = new AMap.Map("container", {resizeEnable: true});
+  var lnglats = [
+    [116.368904, 39.923423],
+    [116.382122, 39.921176],
+    [116.387271, 39.922501],
+    [116.398258, 39.914600]
+  ];
+  let position =  [116.368904, 39.923423]
+
+  function addPoint(position,content) {
+    new AMap.Marker({
+      map: map,
+      position: position,
+      content:content
+    });
+  }
+
+  // console.log(lnglats[0])
+
+  addPoint(lnglats[0],"我是一个点")
+  addPoint(lnglats[0],"我是2个点")
+</script>
+</body>
+</html>

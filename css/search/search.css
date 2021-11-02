@@ -1,5 +1,6 @@
 @import url("//unpkg.com/element-ui@2.15.6/lib/theme-chalk/index.css");
 
+
 .el-carousel__item h3 {
     color: #475669;
     font-size: 14px;
@@ -23,6 +24,7 @@
     height: 500px;
     grid-gap: 30px;
 }
+
 
 /*导航栏*/
 .content_nav {
@@ -116,7 +118,7 @@
     grid-template-rows: 0.8fr 2fr 2fr;
 }
 .content_card_info{
-    font-size: 0.5em;
+    font-size: 0.8em;
     color: rgb(118,118,118);
     font-weight: bold;
 }
@@ -133,7 +135,7 @@
     border-radius: 15px;
     background: rgb(242,242,242);
     padding: 5px;
-    font-size: 0.1em;
+    font-size: 0.7em;
     margin: 3px 3px;
     font-weight: 600;
 }
@@ -161,7 +163,7 @@
     text-align: right;
     font-size: 1.3em;
     font-weight: bold;
-    color: rgb(72,72,72);
+    color: #00848a;
 }
 .content_card_house_price_msg{
     text-align: right;
