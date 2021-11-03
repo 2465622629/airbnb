@@ -34,7 +34,7 @@ let app = new Vue({
         wonderful_list: [], //精彩之地
         cost_performance_card: [],// 高性价比
         // 精彩之地城市列表
-        wonderful_city_list: ['贵阳', '重庆', '成都', '长沙', '北京', '厦门', '上海', '广州'],
+        wonderful_city_list: ['春熙路', '香香巷', '水井坊博物馆', '太古里', '华兴街', '大慈寺', ' 文殊院', '天府广场'],
         input_city: '',
 
 
@@ -57,6 +57,9 @@ let app = new Vue({
             })
                 .then(function (resp) {
                     that.house_card = resp.data.Hostimg
+
+                    console.log("房源西悉尼")
+                    console.log(resp.data.Hostimg)
                     // dom_list = resp.data.Hostimg
                     // console.log(that.house_card)
                 }).catch(function (error) {

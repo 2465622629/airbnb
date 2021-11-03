@@ -11,6 +11,14 @@
   background: rgb(34, 34, 34);
   grid-template-rows: 1fr 1fr;
   grid-gap: 3px;
+  div{
+    overflow: hidden;
+    &:hover img{
+      cursor: pointer;
+      transition: 0.35s;
+      transform:scale(1.1) ;
+    }
+  }
 
   div:nth-child(1) {
     grid-row-start: span 2;

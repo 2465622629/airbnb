@@ -139,7 +139,7 @@
                 </div>
                 <!--        搜索按钮-->
                 <div class="content_btn">
-                    <div @click="isLogin_user();targ_value(input_city,value1)">搜索</div>
+                    <div @click="targ_value(input_city,value1)">搜索</div>
                 </div>
             </div>
 
@@ -245,13 +245,13 @@
             <!--				精彩之地-->
 
             <div class="content_preferential">
-                <div class="content_preferential_title">探索{{ locationList[1] }}精彩之地</div>
+                <div class="content_preferential_title">探索{{ locationList[2] }}精彩之地</div>
                 <!--        选项卡-->
                 <div class="content_tab">
 
                     <ul>
-                        <li v-for="item in locationList">
-                            <span @click="getHouseCardList(item)">{{ item }}</span>
+                        <li v-for="item in wonderful_city_list">
+                            <span @click="wonderful_place(item)">{{ item }}</span>
                         </li>
                     </ul>
                 </div>

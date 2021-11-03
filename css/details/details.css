@@ -12,6 +12,18 @@
   grid-gap: 3px;
 }
 
+.content_top_img div {
+  overflow: hidden;
+}
+
+.content_top_img div:hover img {
+  cursor: pointer;
+  -webkit-transition: 0.35s;
+  transition: 0.35s;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
 .content_top_img div:nth-child(1) {
   -ms-grid-row: span 2;
       grid-row-start: span 2;

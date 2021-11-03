@@ -51,3 +51,30 @@
     font-weight: bold;
     font-size: 1.1em;
 }
+
+
+
+/*显示三行*/
+@media screen and (max-width: 850px){
+    .content_list{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-column-gap: 15px;
+        overflow: hidden;
+        height: 84px;
+        grid-template-rows: 1fr;
+    }
+
+}
+/*显示两行*/
+@media screen and (max-width: 500px){
+    .content_list{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-column-gap: 15px;
+        overflow: hidden;
+        height: 84px;
+        grid-template-rows: 1fr;
+    }
+
+}

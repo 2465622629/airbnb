@@ -26,21 +26,23 @@ let app2 = new Vue({
         houst_img: null, //房源图片
         card_length: 0,
         //房东头像
-        house_img:null,
+        house_img: null,
         // 轮播图列表
-        img_list:[],
+        img_list: [],
         //房东列表
         house_list: []
     }, mounted() {
         var that = this
         console.log(window.location.search)
+
         // 加载时调用
-       this.getImgUrlList(1)
+        this.getImgUrlList(2)
         // 测试用
         this.getUrlPrams()
+        // 批量添加轮播图
 
         // 获取坐标
-        this.getPosition_add("瀍河", "洛阳")
+        this.getPosition_add("成都", "四川")
         this.search_city("四川", "2021-10-1", "2021-10-12")
         // this.getImgUrlList()
         this.getHouse_img(1)
@@ -58,12 +60,28 @@ let app2 = new Vue({
                 }
             })
                 .then(function (resp) {
+                    let tem_imgs = []
                     // console.log("搜索城市")
                     console.log(resp.data)
                     that.card_info = resp.data.houseInfolist
                     that.card_length = resp.data.houseInfolist.length
-                    console.log(that.card_info)
-                    that.getImg_move(that.card_info)
+
+                    // console.log("尝试添加字段")
+                    // for (let i = 0; i < that.card_length; i++) {
+                    //     //获取图片数组
+                    //     that.getHouse_img(resp.data.houseInfolist[i].house_id)
+                    //     tem_imgs = that.house_img
+                    //     console.log("当前组")
+                    //     console.log(tem_imgs)
+                    //     resp.data.houseInfolist[i].house_imgList = tem_imgs
+                    //     console.log('添加完成后');
+                    //     console.log(resp.data.houseInfolist[i].house_imgList)
+                    // }
+                    // resp.data.houseInfolist.house_imgList = 'hello'
+                    // console.log(resp.data.houseInfolist.house_imgList)
+
+
+                    that.move_view([104.011607, 30.655745])
                 }).catch(function (error) {
                 console.log(error);
             })
@@ -78,12 +96,12 @@ let app2 = new Vue({
             })
                 .then(function (resp) {
                     that.houst_img = resp.data.houseInfolist
-                    console.log(that.houst_img)
                     return that.houst_img
                 }).catch(function (error) {
                 console.log(error);
             })
         },
+
         //获取房东头像
         getHouse_img(houst_id) {
             let that = this
@@ -107,20 +125,20 @@ let app2 = new Vue({
         getUrlPrams: function () {
             let that = this
             // 匹配等号到&前所有字符串
-            var url=  window.location.search
+            var url = window.location.search
 
             var list = url.split("&");
             var address = list[0].split("=")[1];
             var date = list[1].split("=")[1];
-            console.log(url,address,date)
+            console.log(url, address, date)
 
             //调用搜索 展示列表
-            that.search_city(address,date)
+            that.search_city(address, date)
 
         },
         //跳转详情页
-        target_details:function (card_id) {
-            window.location.href = location.href =  `/airbnb/html/details/details.html?house_id=${card_id}`
+        target_details: function (card_id) {
+            window.location.href = location.href = `/airbnb/html/details/details.html?house_id=${card_id}`
         },
 
         // 地图方法
@@ -142,8 +160,9 @@ let app2 = new Vue({
                         position.push(list[i].location)
                     }
                     that.position_list = position
-                    console.log("添加点中·--------------------------")
-                    that.addpoints(that.position_list,15,1)
+                    console.log("全部点添加·--------------------------")
+                    that.addpoints(that.position_list, 289, 1)
+
                     return position
                     // 添加全局变量
                     // console.log( this.position_list)
@@ -184,11 +203,14 @@ let app2 = new Vue({
         },
         //添加点
         addPoint: function (position, price, id) {
+            console.log(position.toString())
+            let temp = position.toString().split(",")
+            console.log(temp)
             let info = []
             info.push(`<div id=${id} style='background-color: white;padding: 6px 11px; border-radius: 3px;font-weight: 800'>￥${price}</div>`)
             let marker = new AMap.Marker({
                 map: map,
-                position: position,
+                position: temp,
                 content: info.join(""),
                 animation: 'AMAP_ANIMATION_DROP'
             });
@@ -200,17 +222,16 @@ let app2 = new Vue({
         },
         // 批量添加点
         addpoints: function (positionList, price, id) {
+            console.log("循环前")
+            console.log(positionList)
             let posi = []
             for (var i = 0; i < positionList.length; i++) {
+                console.log("当前点是``````````````")
                 console.log(positionList[i])
-                posi.push(positionList[i])
-                // posi = positionList[i].split(',')
-                // console.log(posi)
-                // let marker = this.addPoint(posi, price, id)
+                let marker = this.addPoint(positionList[i], price, id)
                 // // 点添加点击事件
-                // this.mark_click(marker)
+                this.mark_click(marker)
             }
-            console.log(posi)
         },
 
     }
