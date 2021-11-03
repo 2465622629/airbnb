@@ -64,7 +64,6 @@ test()
 // 展开搜索提示
 function showHistoryList(isShow) {
     let dom = document.querySelector('.search_content')
-    console.log(dom)
     if (isShow){
         dom.style.width = '30.95em'
         dom.style.height = 'auto'

@@ -134,59 +134,89 @@ let app = new Vue({
         //跳转详情页
         target_details: function (card_id) {
             window.location.href = location.href = `/airbnb/html/details/details.html?house_id=${card_id}`
-        }
+        },
+        // 判断是否登录
+        isLogin_user:function () {
+            console.log("进入方法")
+            let that = this
+            console.log("是否登录" + Main.data().isLogin)
+            if (!Main.data().isLogin){ //如果用户没有登录 打开登录窗口
+                Main.data().dialogTableVisible = true
+
+                Main.methods.open("请登录后操作",'error')
+            }
+        },
     }
 })
 
 
 var Main = {
+    mounted() {
+        // this.login_vid('张三','123456')
+    },
     data() {
         return {
-            gridData: [{
-                date: '2016-05-02',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-04',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-01',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-03',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }],
             input_name: '',
 			input_pwd:'',
+            search_input:'',
             dialogTableVisible: false,
             dialogFormVisible: false,
-            form: {
-                name: '',
-                region: '',
-                date1: '',
-                date2: '',
-                delivery: false,
-                type: [],
-                resource: '',
-                desc: ''
-            },
-            formLabelWidth: '120px'
+            formLabelWidth: '120px',
+            isLogin:false
+
         };
 
     }, methods: {
-        open() {
-            this.$message({
-                message: '登陆成功',
-                type: 'success'
-            });
+        // 表单验证
+
+        // 非空验证
+        is_empty:function (name,pwd){
+            let that = this
+            console.log(name,pwd)
+            let msg  = ''
+            let types = 'warning'
+            if (name=='' && pwd ==''){
+                msg = '请输入完整信息'
+
+                that.open(msg,types)
+            }
+            // else if (){
+            //     msg = '登录成功'
+            //     open(msg)
+            // }
         },
-        loginFail() {
+        //登录请求
+        login_vid:function(name,pwd){
+            let that = this
+            let msg = ''
+            let isLogin = false
+            axios.get("http://192.168.137.152:2083/Airbnb/register/login", {
+                params: {
+                    userName:name,
+                    userPwd:pwd
+                }
+            }) .then(function (resp) {
+                console.log(resp.data.code)
+                let code = resp.data.code
+                let types = 'success'
+                if (resp.data.code==200){
+                    isLogin = true
+                    msg = '登录成功'
+                    that.isLogin = true
+                    that.open(msg,types)
+                    that.dialogTableVisible = false
+                }
+            }).catch(function (error) {
+                console.log(error);
+            })
+
+
+        }
+        ,
+        open(msg,type) {
             this.$message({
-                message: '登录失败',
-                type: 'error'
+                message: msg,
+                type: type
             });
         },
 
@@ -198,6 +228,11 @@ var Main = {
                     h('i', {style: 'color: teal'}, 'VNode')
                 ])
             });
+        },
+        //搜索
+        target_value(address) {
+            console.log(`address${address}`)
+            location.href = `/airbnb/html/search/search.html?address=${address}`
         }
     }
 };

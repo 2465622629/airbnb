@@ -35,7 +35,6 @@ let app2 = new Vue({
         var that = this
         console.log(window.location.search)
         // 加载时调用
-        let t_position = []
        this.getImgUrlList(1)
         // 测试用
         this.getUrlPrams()
@@ -70,7 +69,6 @@ let app2 = new Vue({
             })
         },
         //获取房源图片列表
-
         getImgUrlList: function (house_id) {
             let that = this
             axios.get("http://192.168.137.152:2083/Airbnb/Serach/selectHouseimg", {
@@ -105,6 +103,25 @@ let app2 = new Vue({
             })
         },
 
+        //获取url参数
+        getUrlPrams: function () {
+            let that = this
+            // 匹配等号到&前所有字符串
+            var url=  window.location.search
+
+            var list = url.split("&");
+            var address = list[0].split("=")[1];
+            var date = list[1].split("=")[1];
+            console.log(url,address,date)
+
+            //调用搜索 展示列表
+            that.search_city(address,date)
+
+        },
+        //跳转详情页
+        target_details:function (card_id) {
+            window.location.href = location.href =  `/airbnb/html/details/details.html?house_id=${card_id}`
+        },
 
         // 地图方法
         //获取坐标
@@ -125,6 +142,7 @@ let app2 = new Vue({
                         position.push(list[i].location)
                     }
                     that.position_list = position
+                    console.log("添加点中·--------------------------")
                     that.addpoints(that.position_list,15,1)
                     return position
                     // 添加全局变量
@@ -163,7 +181,8 @@ let app2 = new Vue({
                 console.log("绑定")
                 infoWindow.open(map, marker.getPosition());
             });
-        },//添加点
+        },
+        //添加点
         addPoint: function (position, price, id) {
             let info = []
             info.push(`<div id=${id} style='background-color: white;padding: 6px 11px; border-radius: 3px;font-weight: 800'>￥${price}</div>`)
@@ -174,42 +193,26 @@ let app2 = new Vue({
                 animation: 'AMAP_ANIMATION_DROP'
             });
             return marker
-        }, move_view: function (position) {
+        },
+        //移动视图
+        move_view: function (position) {
             map.panTo(position)
         },
-
         // 批量添加点
-
         addpoints: function (positionList, price, id) {
             let posi = []
             for (var i = 0; i < positionList.length; i++) {
                 console.log(positionList[i])
-                posi = positionList[i].split(',')
-                console.log(posi)
-                let marker = this.addPoint(posi, price, id)
-                // 点添加点击事件
-                this.mark_click(marker)
+                posi.push(positionList[i])
+                // posi = positionList[i].split(',')
+                // console.log(posi)
+                // let marker = this.addPoint(posi, price, id)
+                // // 点添加点击事件
+                // this.mark_click(marker)
             }
+            console.log(posi)
         },
-        //获取url参数
-        getUrlPrams: function () {
-            let that = this
-            // 匹配等号到&前所有字符串
-            var url=  window.location.search
 
-            var list = url.split("&");
-            var address = list[0].split("=")[1];
-            var date = list[1].split("=")[1];
-            console.log(url,address,date)
-
-            //调用搜索 展示列表
-            that.search_city(address,date)
-
-        },
-        //跳转详情页
-        target_details:function (card_id) {
-            window.location.href = location.href =  `/airbnb/html/details/details.html?house_id=${card_id}`
-        }
     }
 })
 
